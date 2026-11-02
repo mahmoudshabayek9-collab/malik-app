@@ -1,0 +1,943 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><title>برنامج مالك</title><style>:root{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}@font-face{font-family:'Amiri Quran';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/amiri-quran-arabic-400-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EEFF}@font-face{font-family:'Amiri Quran';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/amiri-quran-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Baloo Bhaijaan 2';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/baloo-bhaijaan-2-arabic-400-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EEFF}@font-face{font-family:'Baloo Bhaijaan 2';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/baloo-bhaijaan-2-arabic-500-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EEFF}@font-face{font-family:'Baloo Bhaijaan 2';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/baloo-bhaijaan-2-arabic-600-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EEFF}@font-face{font-family:'Baloo Bhaijaan 2';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/baloo-bhaijaan-2-arabic-700-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EEFF}@font-face{font-family:'Baloo Bhaijaan 2';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/baloo-bhaijaan-2-arabic-800-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EEFF}@font-face{font-family:'Baloo Bhaijaan 2';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/baloo-bhaijaan-2-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Baloo Bhaijaan 2';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/baloo-bhaijaan-2-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Baloo Bhaijaan 2';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/baloo-bhaijaan-2-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Baloo Bhaijaan 2';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/baloo-bhaijaan-2-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Baloo Bhaijaan 2';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/baloo-bhaijaan-2-latin-800-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Readex Pro';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/readex-pro-arabic-400-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EEFF}@font-face{font-family:'Readex Pro';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/readex-pro-arabic-500-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EEFF}@font-face{font-family:'Readex Pro';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/readex-pro-arabic-600-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EEFF}@font-face{font-family:'Readex Pro';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/readex-pro-arabic-700-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EEFF}@font-face{font-family:'Readex Pro';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/readex-pro-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Readex Pro';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/readex-pro-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Readex Pro';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/readex-pro-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Readex Pro';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/readex-pro-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}</style></head><body>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#7EC8E3">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<style>
+/* Layout: تطبيق بعمود واحد بعرض الهاتف؛ عالم «نونو» البومة: سماء وتلال للطفل، وغرفة هادئة بيضاء للوالد خلف قفل */
+:root{
+  --sky:#7EC8E3; --sky2:#BFE6F3; --hill:#8CCB6B; --hill2:#6DB24F; --sun:#FFC94A;
+  --coral:#FF7B6B; --grape:#8B6BD9; --mint:#4CC3A3; --ink:#2B2340; --paper:#FFFFFF; --cream:#FFF7E6;
+  --muted:#6D6680; --line:#E7E2F0; --good:#3BB273; --bad:#F06A5A; --pbg:#F6F4FA;
+  --kid:"Baloo Bhaijaan 2","Readex Pro",Tahoma,sans-serif; --body:"Readex Pro",Tahoma,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{background:var(--sky);color:var(--ink);font-family:var(--kid);direction:rtl;overflow:hidden;user-select:none;-webkit-user-select:none}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--sky)}
+#app{height:100%;max-width:520px;margin:0 auto;display:flex;flex-direction:column;position:relative;
+  background:linear-gradient(var(--sky) 0%,var(--sky2) 62%,var(--sky2) 100%);overflow:hidden}
+/* التلال والغيوم */
+#app::after{content:"";position:absolute;inset:auto -20% -40px;height:170px;border-radius:50% 50% 0 0;background:var(--hill);z-index:0}
+#app::before{content:"";position:absolute;inset:auto -40% -70px 20%;height:190px;border-radius:50% 50% 0 0;background:var(--hill2);z-index:0}
+.cloud{position:absolute;width:90px;height:28px;background:#fff;border-radius:30px;opacity:.85;z-index:0}
+.cloud::before,.cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
+.cloud::before{width:40px;height:40px;top:-20px;left:14px}.cloud::after{width:30px;height:30px;top:-14px;left:44px}
+.c1{top:90px;right:-20px;animation:drift 40s linear infinite}.c2{top:200px;left:-10px;transform:scale(.7);animation:drift 55s linear infinite reverse}
+@keyframes drift{from{translate:0}to{translate:-60px}}
+
+/* الشريط العلوي */
+.bar{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding-block:10px 4px;padding-left:max(14px,env(safe-area-inset-left,0px));padding-right:max(14px,env(safe-area-inset-right,0px))}
+.ibtn{width:52px;height:52px;border-radius:18px;border:0;background:var(--paper);box-shadow:0 4px 0 rgba(43,35,64,.15);font-size:1.6rem;display:grid;place-items:center;cursor:pointer;position:relative}
+.ibtn:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(43,35,64,.15)}
+.ibtn.ghost{visibility:hidden}
+.stars{display:flex;align-items:center;gap:6px;background:var(--paper);padding:6px 16px;border-radius:99px;font-weight:800;font-size:1.35rem;box-shadow:0 4px 0 rgba(43,35,64,.15);font-variant-numeric:tabular-nums}
+.stars.pop{animation:pop .5s}
+@keyframes pop{50%{transform:scale(1.25)}}
+#lock svg{position:absolute;inset:-4px;width:60px;height:60px;transform:rotate(-90deg);pointer-events:none}
+#lock circle{fill:none;stroke:var(--grape);stroke-width:5;stroke-dasharray:170;stroke-dashoffset:170;stroke-linecap:round}
+#lock.hold circle{transition:stroke-dashoffset 2s linear;stroke-dashoffset:0}
+
+/* الشاشات */
+.screen{position:relative;z-index:2;flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;gap:14px;
+  padding-block:8px 24px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.screen[hidden]{display:none!important}
+
+/* البومة نونو */
+.owl{width:110px;height:110px;flex:none}
+.owl .eyes{animation:blink 4s infinite;transform-origin:60px 55px}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.owl.talk{animation:bob .45s ease-in-out infinite alternate}
+@keyframes bob{to{transform:translateY(-6px) rotate(-3deg)}}
+.guide{display:flex;align-items:flex-end;gap:8px}
+.guide .owl{width:84px;height:84px}
+.bubble{flex:1;background:var(--paper);border-radius:20px 20px 4px 20px;padding:10px 14px;font-size:1.05rem;font-weight:700;min-height:52px;
+  display:flex;align-items:center;box-shadow:0 4px 0 rgba(43,35,64,.1);line-height:1.5}
+.bubble.big{font-size:1.7rem;color:var(--grape)}
+
+/* البداية */
+.start{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center}
+.start .owl{width:170px;height:170px}
+.start h1{font-size:2.2rem;margin:0;font-weight:800;color:var(--ink);line-height:1.2}
+.start p{margin:0;font-size:1.1rem;color:var(--ink);opacity:.75}
+.go{font:inherit;font-weight:800;font-size:1.6rem;border:0;border-radius:24px;padding:14px 46px;background:var(--sun);color:var(--ink);
+  box-shadow:0 6px 0 #E0A21F;cursor:pointer}
+.go:active{transform:translateY(5px);box-shadow:0 1px 0 #E0A21F}
+
+/* الرئيسية */
+.hello{font-size:1.5rem;font-weight:800;margin:0}
+.cards{display:grid;gap:14px}
+.card{font:inherit;border:0;border-radius:26px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:right;
+  color:#fff;position:relative;box-shadow:0 6px 0 rgba(0,0,0,.18)}
+.card:active{transform:translateY(5px);box-shadow:0 1px 0 rgba(0,0,0,.18)}
+.card .art{font-size:2.8rem;width:76px;height:76px;border-radius:20px;background:rgba(255,255,255,.28);display:grid;place-items:center;flex:none;line-height:1}
+.card b{display:block;font-size:1.45rem;font-weight:800;line-height:1.2}
+.card small{font-size:.95rem;opacity:.92;font-weight:500}
+.card.k1{background:var(--coral)}.card.k2{background:var(--grape)}.card.k3{background:var(--mint)}
+.card.k4{background:var(--paper);color:var(--ink)}
+.card.k4 .art{background:var(--cream)}
+.today{position:absolute;top:-8px;left:14px;background:var(--sun);color:var(--ink);font-size:.8rem;font-weight:800;padding:2px 10px;border-radius:99px}
+
+/* عناصر الألعاب */
+.panel{background:var(--paper);border-radius:26px;padding:16px;display:grid;gap:12px;box-shadow:0 6px 0 rgba(43,35,64,.1)}
+.lvl{display:flex;gap:4px;justify-content:center}
+.lvl i{width:12px;height:12px;border-radius:50%;background:var(--line)}
+.lvl i.on{background:var(--sun)}
+.picks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pick{font-size:2.8rem;aspect-ratio:1;max-width:100%;border-radius:22px;border:3px solid var(--line);background:var(--cream);cursor:pointer;
+  display:grid;place-items:center;position:relative;line-height:1;transition:transform .12s}
+.pick:active{transform:scale(.92)}
+.pick.ok{border-color:var(--good);background:#E2F6EA}
+.pick.no{border-color:var(--bad);background:#FDE6E3;animation:shake .35s}
+.pick sub{position:absolute;top:4px;right:9px;font-size:1rem;color:var(--good);font-weight:800;font-family:var(--kid)}
+@keyframes shake{25%{translate:-6px}75%{translate:6px}}
+.ear{display:grid;place-items:center;height:200px;font-size:5rem}
+.ear span{animation:pulse 1s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.15)}}
+.scene{direction:ltr;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.slot{aspect-ratio:1;border-radius:22px;border:3px dashed #C9C0DC;background:var(--cream);cursor:pointer;font-size:2.6rem;display:grid;place-items:center;line-height:1}
+.slot.box{border:3px solid #E0A21F;background:#FFE8B0;font-size:3.2rem}
+.slot.ok{border:3px solid var(--good);background:#E2F6EA}
+.slot.no{border:3px solid var(--bad);background:#FDE6E3;animation:shake .35s}
+.slot.hint{border:3px solid var(--good);animation:pulse 1s infinite}
+.slot.void{visibility:hidden}
+.bigtap{font:inherit;width:100%;aspect-ratio:1.3;border-radius:36px;border:0;background:var(--sun);box-shadow:0 8px 0 #E0A21F;cursor:pointer;
+  display:grid;place-items:center;font-size:5.5rem;line-height:1;transition:background .15s}
+.bigtap:active{transform:translateY(6px);box-shadow:0 2px 0 #E0A21F}
+.bigtap:disabled{opacity:.5}
+.bigtap.ok{background:var(--good)}.bigtap.no{background:var(--bad)}
+.tally{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;min-height:30px;font-size:1.5rem}
+.controls{display:flex;justify-content:center;gap:14px}
+.round{font:inherit;width:78px;height:78px;border-radius:50%;border:0;font-size:2.1rem;cursor:pointer;display:grid;place-items:center;line-height:1}
+.round.play{background:var(--good);color:#fff;box-shadow:0 6px 0 #2A8A57}
+.round.again{background:var(--paper);box-shadow:0 6px 0 rgba(43,35,64,.15)}
+.round:active{transform:translateY(5px);box-shadow:none}
+.round:disabled{opacity:.35}
+
+/* بلاطات الرئيسية */
+.sec{font-size:1.1rem;font-weight:800;margin:2px 0 -4px;opacity:.8}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tile{font:inherit;border:0;border-radius:24px;padding:12px 4px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;color:#fff;
+  position:relative;box-shadow:0 6px 0 rgba(0,0,0,.18);min-width:0}
+.tile:active{transform:translateY(5px);box-shadow:0 1px 0 rgba(0,0,0,.18)}
+.tile .art{font-size:2.2rem;width:62px;height:62px;border-radius:18px;background:rgba(255,255,255,.28);display:grid;place-items:center;line-height:1;font-weight:800}
+.tile b{font-size:1.02rem;font-weight:800;line-height:1.2;text-align:center}
+.t1{background:var(--coral)}.t2{background:var(--grape)}.t3{background:var(--mint)}
+.t4{background:#EE9B2B}.t5{background:#3E8FD6}.t6{background:#E2638F}
+.tile .today{top:-9px;left:50%;transform:translateX(-50%);white-space:nowrap}
+.card.s-ar{background:#EE9B2B}.card.s-en{background:#3E8FD6}.card.s-ma{background:#E2638F}
+.card .acc{position:absolute;top:10px;left:14px;font-size:.85rem;font-weight:700;background:rgba(255,255,255,.3);padding:0 10px;border-radius:99px}
+/* المذاكرة */
+.qdots{display:flex;gap:6px;justify-content:center}
+.qdots i{width:26px;height:9px;border-radius:99px;background:var(--line)}
+.qdots i.ok{background:var(--good)}.qdots i.no{background:var(--bad)}.qdots i.cur{background:var(--sun)}
+.qshow{min-height:64px;display:flex;flex-wrap:wrap;gap:4px;justify-content:center;align-items:center;font-size:2.4rem;line-height:1.15;text-align:center}
+.qshow.sm{font-size:1.45rem}
+.qshow .plus{font-size:2rem;font-weight:800;color:var(--grape);padding:0 6px}
+.qshow .big{font-size:4.5rem}
+.qopts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.qopts.two{grid-template-columns:1fr 1fr}
+.opt{font:inherit;font-weight:800;font-size:2.7rem;min-height:98px;border-radius:22px;border:3px solid var(--line);background:var(--cream);color:var(--ink);cursor:pointer;
+  display:flex;flex-wrap:wrap;gap:2px;align-items:center;justify-content:center;line-height:1.1;padding:6px;transition:transform .12s;min-width:0}
+.opt:active{transform:scale(.93)}
+.opt small{font-size:.6em;opacity:.7;margin-inline-start:4px}
+.opt.word{font-size:1.9rem;text-transform:lowercase}
+.opt.grp{font-size:1.25rem;min-height:130px;align-content:center}
+.opt svg{width:66px;height:66px}
+.opt.ok{border-color:var(--good);background:#E2F6EA}
+.opt.no{border-color:var(--bad);background:#FDE6E3;animation:shake .35s}
+.qend{text-align:center;font-size:2.4rem;font-weight:800;padding:20px 0}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chips button{font:inherit;font-size:1rem;min-width:38px;padding:3px 8px;border-radius:9px;border:1px solid var(--line);background:var(--pbg);color:var(--muted);cursor:pointer}
+.chips button.on{background:var(--grape);border-color:var(--grape);color:#fff}
+
+.tiles.two{grid-template-columns:1fr 1fr}
+.t7{background:#2E9E6B}.t8{background:#D9534F}
+.card.s-de{background:#D9534F}
+.card.k5{background:#2E9E6B}
+.card.k5 .acc{top:-8px;background:var(--sun);color:var(--ink)}
+.dot{display:block;width:58px;height:58px;border-radius:50%;border:3px solid rgba(43,35,64,.15)}
+/* القرآن */
+.surahs{display:grid;gap:10px}
+.sura{font:inherit;border:0;border-radius:20px;background:var(--paper);padding:10px 12px;display:flex;align-items:center;gap:12px;cursor:pointer;
+  box-shadow:0 4px 0 rgba(43,35,64,.1);text-align:right;color:var(--ink);width:100%}
+.sura:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(43,35,64,.1)}
+.sura .no{width:46px;height:46px;border-radius:14px;background:#E3F4EC;color:#2E9E6B;display:grid;place-items:center;font-weight:800;font-variant-numeric:tabular-nums;flex:none}
+.sura .nm{flex:1;min-width:0}
+.sura b{font-size:1.25rem;display:block;line-height:1.3}
+.beads{display:flex;gap:3px;flex-wrap:wrap;margin-top:3px}
+.beads i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.beads i.on{background:#2E9E6B}
+.beads.big{justify-content:center;gap:6px}
+.beads.big i{width:16px;height:16px;cursor:pointer}
+.beads.big i.cur{outline:3px solid var(--sun);outline-offset:1px}
+.sura .st{font-size:1.5rem;flex:none}
+.due{font-size:.75rem;font-weight:800;background:var(--sun);border-radius:99px;padding:0 8px;color:var(--ink);white-space:nowrap}
+.shead{text-align:center;font-size:1.5rem;font-weight:800;color:#2E9E6B;line-height:1.2}
+.basmala,.ayah{font-family:"Amiri Quran","Amiri","Traditional Arabic",serif;direction:rtl;color:var(--ink);user-select:text;-webkit-user-select:text}
+.basmala{text-align:center;font-size:1.25rem;opacity:.75;line-height:2}
+.ayah{font-size:1.9rem;line-height:2.4;text-align:center;padding:4px;min-height:120px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap}
+.ayah.all{font-size:1.35rem;line-height:2.3;text-align:justify;display:block;min-height:0}
+.ayah .hl{background:#FFF0C2;border-radius:8px}
+.ayah .an{font-size:.8em;color:#2E9E6B;margin:0 4px}
+.listen{display:flex;gap:8px;justify-content:center;font-size:1.5rem}
+.listen span{opacity:.25;transition:opacity .2s}.listen span.on{opacity:1}
+.round.ok{background:#2E9E6B;color:#fff;box-shadow:0 6px 0 #1F7A51}
+.round.sm{width:62px;height:62px;font-size:1.6rem}
+.pstrip{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;font-family:var(--body);font-size:.8rem}
+.pstrip button,.pstrip a{font:inherit;border:1px dashed rgba(43,35,64,.3);background:rgba(255,255,255,.7);color:var(--ink);padding:4px 10px;border-radius:99px;cursor:pointer;text-decoration:none}
+.pstrip .lbl{width:100%;text-align:center;color:var(--ink);opacity:.6}
+
+/* الملصقات والراحة */
+.book{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stk{aspect-ratio:1;border-radius:20px;background:var(--paper);display:grid;place-items:center;font-size:2.4rem;box-shadow:0 4px 0 rgba(43,35,64,.1)}
+.stk.lock{background:rgba(255,255,255,.45);font-size:1.4rem;color:var(--muted);box-shadow:none}
+.next{text-align:center;font-weight:700;font-size:1.1rem}
+.meter{height:16px;border-radius:99px;background:rgba(255,255,255,.6);overflow:hidden}
+.meter i{display:block;height:100%;background:var(--sun);border-radius:99px;transition:width .4s}
+
+/* نافذة الملصق الجديد */
+.modal{position:absolute;inset:0;z-index:20;background:rgba(43,35,64,.45);display:grid;place-items:center;padding:24px}
+.modal .sheet{background:var(--paper);border-radius:30px;padding:26px;text-align:center;display:grid;gap:10px;width:min(320px,100%);animation:pop .5s}
+.modal .sheet div{font-size:6rem;line-height:1.1}
+.modal .sheet b{font-size:1.5rem}
+
+/* المطر الاحتفالي */
+.conf{position:absolute;top:-30px;z-index:15;font-size:1.6rem;pointer-events:none;animation:fall 1.8s ease-in forwards}
+@keyframes fall{to{transform:translateY(105vh) rotate(540deg);opacity:.6}}
+
+/* منطقة الوالد */
+#s-parent{background:var(--pbg);font-family:var(--body);font-size:14.5px;line-height:1.8;user-select:text;-webkit-user-select:text}
+#s-parent h2{font-size:1.15rem;margin:0;font-weight:600}
+#s-parent h3{font-size:.98rem;margin:0 0 4px;font-weight:600}
+#s-parent p{margin:0}
+.ptabs{display:flex;gap:6px;overflow-x:auto;position:sticky;top:-8px;background:var(--pbg);padding-block:6px;z-index:2}
+.ptabs button{font:inherit;font-size:.86rem;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:6px 14px;border-radius:99px;cursor:pointer;white-space:nowrap}
+.ptabs button.on{background:var(--grape);border-color:var(--grape);color:#fff}
+.pc{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:8px}
+.note{font-size:.82rem;color:var(--muted)}
+ul.clean{margin:0;padding-inline-start:18px;display:grid;gap:3px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:.84rem;min-width:430px}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:500;color:var(--muted);font-size:.78rem;background:var(--pbg)}
+tr:last-child td{border-bottom:0}
+.num{font-variant-numeric:tabular-nums;text-align:center}
+.up{color:var(--good);font-weight:600}.dn{color:var(--bad);font-weight:600}
+.form{display:grid;gap:8px;grid-template-columns:1fr 1fr}
+.form label{display:grid;gap:2px;font-size:.78rem;color:var(--muted)}
+.form input,.pc select{font:inherit;font-size:.95rem;padding:7px 10px;border:1px solid var(--line);border-radius:9px;background:var(--pbg);color:var(--ink);width:100%}
+.pbtn{font:inherit;font-size:.88rem;border:1px solid var(--grape);background:var(--grape);color:#fff;padding:7px 16px;border-radius:9px;cursor:pointer}
+.pbtn.ghost{background:transparent;color:var(--grape)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.week7{display:flex;gap:5px}
+.week7 div{flex:1;text-align:center;font-size:.7rem;color:var(--muted)}
+.week7 i{display:block;height:26px;border-radius:7px;background:var(--line);margin-bottom:2px}
+.week7 i.done{background:var(--good)}
+details{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+summary{cursor:pointer;font-weight:500}
+.seq{direction:ltr;text-align:right;font-variant-numeric:tabular-nums}
+.pview[hidden]{display:none!important}
+.pview{display:grid;gap:12px}
+button:focus-visible{outline:3px solid var(--grape);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+
+<div id="app">
+  <div class="cloud c1"></div><div class="cloud c2"></div>
+
+  <div class="bar">
+    <button class="ibtn ghost" id="home" aria-label="الرئيسية">🏠</button>
+    <div class="stars" id="stars">⭐ <span id="starN">0</span></div>
+    <button class="ibtn" id="lock" aria-label="منطقة الوالد: اضغط مطولاً">🔒<svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="27"/></svg></button>
+  </div>
+
+  <!-- البداية -->
+  <section class="screen" id="s-start">
+    <div class="start">
+      <svg class="owl talk" viewBox="0 0 120 120" aria-hidden="true">
+        <path d="M24 30 L38 46 L30 22Z" fill="#8B6BD9"/><path d="M96 30 L82 46 L90 22Z" fill="#8B6BD9"/>
+        <ellipse cx="60" cy="70" rx="42" ry="45" fill="#8B6BD9"/><ellipse cx="60" cy="84" rx="27" ry="28" fill="#C9B8F2"/>
+        <g class="eyes"><circle cx="44" cy="55" r="15" fill="#fff"/><circle cx="76" cy="55" r="15" fill="#fff"/><circle cx="46" cy="57" r="7" fill="#2B2340"/><circle cx="74" cy="57" r="7" fill="#2B2340"/><circle cx="48" cy="54" r="2.4" fill="#fff"/><circle cx="76" cy="54" r="2.4" fill="#fff"/></g>
+        <path d="M53 67 L60 76 L67 67Z" fill="#FFC94A"/><ellipse cx="44" cy="114" rx="9" ry="4" fill="#FFC94A"/><ellipse cx="76" cy="114" rx="9" ry="4" fill="#FFC94A"/>
+      </svg>
+      <h1>أهلاً يا مالك!</h1>
+      <p>أنا نونو، هيا نلعب ونتعلّم</p>
+      <button class="go" id="begin">هيّا ▶</button>
+    </div>
+  </section>
+
+  <!-- الرئيسية -->
+  <section class="screen" id="s-home" hidden>
+    <div class="guide"><svg class="owl" viewBox="0 0 120 120" aria-hidden="true"><use href="#owlsym"/></svg><div class="bubble">ماذا نلعب اليوم؟</div></div>
+    <p class="sec">ألعاب نونو 🦉</p>
+    <div class="tiles">
+      <button class="tile t1" data-go="g1"><span class="art">🍎</span><b>تذكّر الصور</b></button>
+      <button class="tile t2" data-go="g2"><span class="art">📦</span><b>أين أضعها؟</b></button>
+      <button class="tile t3" data-go="g3"><span class="art">🐱</span><b>اسمع القطة</b></button>
+    </div>
+    <p class="sec">القرآن الكريم 📖</p>
+    <div class="cards">
+      <button class="card k5" id="quranCard"><span class="art">📖</span><span><b>جزء عمّ</b><small id="qSmall">هيا نحفظ آية جديدة</small></span></button>
+    </div>
+    <p class="sec">المذاكرة 📚</p>
+    <div class="tiles two">
+      <button class="tile t4" data-subj="ar"><span class="art">أ ب</span><b>العربي</b></button>
+      <button class="tile t5" data-subj="en"><span class="art">A b</span><b>English</b></button>
+      <button class="tile t6" data-subj="ma"><span class="art">1 2</span><b>Math</b></button>
+      <button class="tile t8" data-subj="de"><span class="art">🇩🇪</span><b>Deutsch</b></button>
+    </div>
+    <div class="cards">
+      <button class="card k4" data-go="stickers"><span class="art">🦁</span><span><b>ملصقاتي</b><small id="stkSmall">اجمع النجوم لتفوز بملصق</small></span></button>
+    </div>
+  </section>
+
+  <!-- لعبة 1 -->
+  <section class="screen" id="s-g1" hidden>
+    <div class="guide"><svg class="owl" viewBox="0 0 120 120"><use href="#owlsym"/></svg><div class="bubble" id="b1">اضغط ▶ ثم اسمع جيداً</div></div>
+    <div class="panel">
+      <div class="lvl" id="l1"></div>
+      <div id="g1area"><div class="ear"><span>👂</span></div></div>
+    </div>
+    <div class="controls"><button class="round again" id="g1rep" aria-label="أعد السماع" disabled>👂</button><button class="round play" id="g1go" aria-label="ابدأ">▶</button></div>
+  </section>
+
+  <!-- لعبة 2 -->
+  <section class="screen" id="s-g2" hidden>
+    <div class="guide"><svg class="owl" viewBox="0 0 120 120"><use href="#owlsym"/></svg><div class="bubble" id="b2">اضغط ▶ ثم اسمع أين نضعها</div></div>
+    <div class="panel">
+      <div class="lvl" id="l2"></div>
+      <div class="scene" id="scene"></div>
+    </div>
+    <div class="controls"><button class="round again" id="g2rep" aria-label="أعد السماع" disabled>👂</button><button class="round play" id="g2go" aria-label="ابدأ">▶</button></div>
+  </section>
+
+  <!-- لعبة 3 -->
+  <section class="screen" id="s-g3" hidden>
+    <div class="guide"><svg class="owl" viewBox="0 0 120 120"><use href="#owlsym"/></svg><div class="bubble" id="b3">اضغط القطة عندما تسمع «قطة»</div></div>
+    <div class="panel">
+      <div class="lvl" id="l3"></div>
+      <button class="bigtap" id="tap" disabled aria-label="قطة">🐱</button>
+      <div class="tally" id="tally"></div>
+    </div>
+    <div class="controls"><button class="round play" id="g3go" aria-label="ابدأ">▶</button></div>
+  </section>
+
+  <!-- قائمة أنشطة المادة -->
+  <section class="screen" id="s-subj" hidden>
+    <div class="guide"><svg class="owl" viewBox="0 0 120 120"><use href="#owlsym"/></svg><div class="bubble" id="bsubj">اختر نشاطاً</div></div>
+    <div class="cards" id="actlist"></div>
+  </section>
+
+  <!-- السؤال -->
+  <section class="screen" id="s-quiz" hidden>
+    <div class="guide"><svg class="owl" viewBox="0 0 120 120"><use href="#owlsym"/></svg><div class="bubble" id="bq">استمع</div></div>
+    <div class="panel">
+      <div class="qdots" id="qdots"></div>
+      <div class="qshow" id="qshow"></div>
+      <div class="qopts" id="qopts"></div>
+    </div>
+    <div class="controls">
+      <button class="round again" id="qback" aria-label="الأنشطة">📚</button>
+      <button class="round again" id="qrep" aria-label="أعد السماع">👂</button>
+      <button class="round play" id="qgo" aria-label="مرة أخرى" disabled>▶</button>
+    </div>
+  </section>
+
+  <!-- قائمة السور -->
+  <section class="screen" id="s-quran" hidden>
+    <div class="guide"><svg class="owl" viewBox="0 0 120 120"><use href="#owlsym"/></svg><div class="bubble">اختر السورة</div></div>
+    <div class="surahs" id="surahs"></div>
+  </section>
+
+  <!-- السورة -->
+  <section class="screen" id="s-surah" hidden>
+    <div class="guide"><svg class="owl" viewBox="0 0 120 120"><use href="#owlsym"/></svg><div class="bubble" id="bs">استمع للآية ثلاث مرات</div></div>
+    <div class="panel">
+      <div class="shead" id="sname"></div>
+      <div class="beads big" id="sbeads"></div>
+      <div class="basmala" id="basm">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ</div>
+      <div class="ayah" id="ayah"></div>
+      <div class="listen" id="listen"><span>👂</span><span>👂</span><span>👂</span></div>
+    </div>
+    <div class="controls">
+      <button class="round again sm" id="aPrev" aria-label="الآية السابقة">➡</button>
+      <button class="round play" id="aPlay" aria-label="استمع">🔊</button>
+      <button class="round ok" id="aOk" aria-label="قرأها وحده">✅</button>
+      <button class="round again sm" id="aNext" aria-label="الآية التالية">⬅</button>
+    </div>
+    <div class="pstrip">
+      <span class="lbl">للوالد</span>
+      <button id="aRec">🎙 سجّل صوت هذه الآية</button>
+      <button id="aAll">📜 السورة كاملة</button>
+      <button id="sRec">🎙 تلاوة السورة كاملة</button>
+      <a id="sLink" href="https://quran.com" target="_blank" rel="noopener">🎧 استمع على quran.com</a>
+    </div>
+    <input type="file" id="recIn" accept="audio/*" capture hidden>
+  </section>
+
+  <!-- الملصقات -->
+  <section class="screen" id="s-stickers" hidden>
+    <div class="guide"><svg class="owl" viewBox="0 0 120 120"><use href="#owlsym"/></svg><div class="bubble">كل 5 نجوم = ملصق جديد!</div></div>
+    <div class="meter"><i id="meter"></i></div>
+    <div class="next" id="nextTxt"></div>
+    <div class="book" id="book"></div>
+  </section>
+
+  <!-- الراحة -->
+  <section class="screen" id="s-rest" hidden>
+    <div class="start">
+      <div style="font-size:6rem;line-height:1">😴🌙</div>
+      <h1>أحسنت اليوم!</h1>
+      <p>نونو تعبت وتريد أن ترتاح.<br>نلعب غداً إن شاء الله</p>
+      <button class="go" data-go="stickers">ملصقاتي 🦁</button>
+    </div>
+  </section>
+
+  <!-- منطقة الوالد -->
+  <section class="screen" id="s-parent" hidden>
+    <div class="row" style="justify-content:space-between"><h2>منطقة الوالد</h2><button class="pbtn ghost" id="pexit">رجوع للطفل</button></div>
+    <div class="ptabs" id="ptabs">
+      <button data-p="prog" class="on">التقدم</button><button data-p="quran">القرآن</button><button data-p="cur">المنهج</button><button data-p="plan">الخطة</button><button data-p="acts">الأنشطة</button><button data-p="tests">طريقة القياس</button><button data-p="set">الإعدادات</button>
+    </div>
+
+    <div class="pview" id="p-prog">
+      <div class="pc"><h3>أيام اللعب في آخر 7 أيام</h3><div class="week7" id="week7"></div>
+        <p class="note" id="todayN"></p></div>
+      <div class="pc"><h3>مستوى الألعاب الآن</h3><div id="lvls" class="note"></div></div>
+      <div class="pc"><h3>المذاكرة</h3><div id="studyLog"></div>
+        <h3 style="margin-top:6px">يحتاج مراجعة</h3><div id="weak" class="note"></div>
+        <p class="note">ما يخطئ فيه يتكرر عليه أكثر تلقائياً حتى يتقنه.</p></div>
+      <div class="pc"><h3>تسجيل قياس شهري</h3>
+        <form class="form" id="aform">
+          <label>التاريخ<input type="date" id="a-d" required></label>
+          <label>الأرقام (أطول سلسلة)<input type="number" id="a-dig" min="0" max="9" inputmode="numeric"></label>
+          <label>الكلمات (أطول سلسلة)<input type="number" id="a-wrd" min="0" max="9" inputmode="numeric"></label>
+          <label>التعليمات (خطوات)<input type="number" id="a-stp" min="0" max="5" inputmode="numeric"></label>
+          <label>كلمات المكان (/10)<input type="number" id="a-spa" min="0" max="10" inputmode="numeric"></label>
+          <label>التركيز (دقائق)<input type="number" id="a-foc" min="0" max="60" inputmode="numeric"></label>
+          <button class="pbtn" type="submit" style="grid-column:1/-1">حفظ القياس</button>
+        </form>
+        <p class="note">طريقة إجراء كل اختبار في تبويب «طريقة القياس».</p></div>
+      <div id="alog"></div>
+    </div>
+
+    <div class="pview" id="p-quran" hidden>
+      <div class="pc"><h3>الإنجاز</h3><p id="qStat"></p><div id="qDue" class="note"></div></div>
+      <div class="pc"><h3>طريقة الحفظ المناسبة لمالك</h3>
+        <p class="note">ضعف الذاكرة السمعية يجعل الآية الطويلة صعبة إذا سمعها دفعة واحدة، لذلك الطريقة قائمة على مقاطع قصيرة وتكرار بالصوت نفسه ودعم بصري.</p>
+        <ul class="clean">
+          <li><b>آية واحدة جديدة في اليوم.</b> الآية الطويلة قسّمها إلى جزأين، وحفّظه كل جزء على حدة.</li>
+          <li><b>الصوت نفسه دائماً:</b> سجّل الآيات بصوتك من زر 🎙، أو استخدم قارئاً واحداً بطيئاً مثل الحصري (المصحف المعلّم).</li>
+          <li><b>يستمع 3 مرات</b> (تضيء الآذان الثلاث)، ثم يردد معك، ثم وحده. إذا قرأها وحده صحيحة اضغط ✅.</li>
+          <li><b>الربط:</b> بعد كل آية جديدة، يسمّع من أول السورة حتى الآية الجديدة.</li>
+          <li><b>استعن بقوته البصرية:</b> المصحف أمامه يتتبع بإصبعه، وإشارة بسيطة باليد لمعنى الآية.</li>
+          <li><b>المراجعة قبل الجديد.</b> يذكّرك التطبيق بموعد مراجعة كل سورة بعد 1 ثم 3 ثم 7 ثم 14 ثم 30 يوماً.</li>
+          <li><b>الوقت:</b> 5–7 دقائق بعد الفجر أو قبل النوم، في مكان هادئ بلا تلفاز.</li>
+        </ul></div>
+      <div class="pc"><h3>التسجيل الصوتي</h3><ul class="clean">
+        <li>زر «🎙 سجّل صوت هذه الآية» في شاشة السورة يفتح مسجّل الهاتف أو يسمح باختيار ملف صوتي.</li>
+        <li>في أندرويد يفتح المسجّل مباشرة. في آيفون سجّل في تطبيق «المذكرات الصوتية» ثم اختر الملف.</li>
+        <li>التسجيلات محفوظة على هذا الهاتف فقط.</li></ul>
+        <p class="note" id="recCount"></p></div>
+      <div class="pc"><h3>الاستماع لقارئ</h3><p class="note">زر «استمع على quran.com» في كل سورة يفتح صفحتها، واختر منها قارئاً واحداً والتزم به.</p></div>
+    </div>
+
+    <div class="pview" id="p-cur" hidden>
+      <p class="note">حدّد ما دُرس في الروضة حتى الآن، فلا يُسأل مالك إلا عنه. حدّثه كل أسبوع مع كتاب المدرسة.</p>
+      <div class="pc"><h3>الحروف العربية المدروسة</h3><div class="chips" id="chAr"></div>
+        <div class="row"><button class="pbtn ghost" data-all="ar">تحديد الكل</button><button class="pbtn ghost" data-none="ar">إلغاء الكل</button></div></div>
+      <div class="pc"><h3>English letters</h3><div class="chips" id="chEn" dir="ltr"></div>
+        <div class="row"><button class="pbtn ghost" data-all="en">تحديد الكل</button><button class="pbtn ghost" data-none="en">إلغاء الكل</button></div></div>
+      <div class="pc"><h3>الأعداد في Math</h3>
+        <select id="curNum"><option value="10">حتى 10</option><option value="20">حتى 20</option></select>
+        <p class="note">الجمع يبقى في حدود 10.</p></div>
+      <div class="pc"><h3>جولات المذاكرة في اليوم</h3>
+        <select id="slimit"><option>4</option><option>6</option><option>8</option><option>10</option></select>
+        <p class="note">الجولة 5 أسئلة. يكفي 6 جولات في اليوم لهذا العمر.</p></div>
+    </div>
+
+    <div class="pview" id="p-plan" hidden>
+      <div class="pc"><h3>الأهداف</h3><ul class="clean">
+        <li>الذاكرة العاملة السمعية: يحتفظ بـ 4 كلمات أو أرقام مسموعة.</li>
+        <li>الانتباه السمعي: يتابع كلاماً متواصلاً 3–5 دقائق.</li>
+        <li>لغة المكان: يفهم فوق، تحت، داخل، بجانب، أمام، خلف، وينفذ 3 خطوات.</li></ul></div>
+      <div class="pc"><h3>المراحل</h3><div class="tbl"><table>
+        <thead><tr><th>الأسابيع</th><th>الذاكرة</th><th>المكان</th><th>التعليمات</th></tr></thead><tbody>
+        <tr><td class="num">1–4</td><td>2–3 عناصر</td><td>فوق، تحت، داخل</td><td>خطوتان</td></tr>
+        <tr><td class="num">5–8</td><td>3–4 عناصر</td><td>بجانب، أمام، خلف</td><td>3 خطوات</td></tr>
+        <tr><td class="num">9–12</td><td>4–5 عناصر</td><td>يمين ويسار</td><td>3 خطوات مع ضوضاء</td></tr></tbody></table></div>
+        <p class="note">التطبيق يرفع المستوى تلقائياً، فلا تستعجل الانتقال.</p></div>
+      <div class="pc"><h3>اليوم الواحد: 20 دقيقة</h3><ul class="clean">
+        <li>5 دقائق على التطبيق (يتوقف تلقائياً بعد عدد الجولات المحدد).</li>
+        <li>10 دقائق نشاط يدوي من تبويب «الأنشطة».</li>
+        <li>5 دقائق قصة قبل النوم، ثم سؤالان: من؟ أين؟ ماذا حدث أولاً؟</li></ul></div>
+      <div class="pc"><h3>قواعد يومية</h3><ul class="clean">
+        <li>تعليمة واحدة أو اثنتان، مع النظر في عينيه.</li><li>اطلب منه إعادة التعليمة قبل التنفيذ.</li>
+        <li>ادعم الكلام بالصور: جدول صباحي مصوّر.</li><li>أطفئ التلفاز عند الحديث معه.</li><li>أنهِ النشاط وهو ينجح، لا وهو محبط.</li></ul></div>
+    </div>
+
+    <div class="pview" id="p-acts" hidden>
+      <div class="tbl"><table><thead><tr><th>النشاط</th><th>الطريقة</th></tr></thead><tbody>
+        <tr><td>ذهبتُ إلى السوق</td><td>«اشتريت تفاحة». يكرر ويضيف عنصراً، ثم دورك.</td></tr>
+        <tr><td>سايمون يقول</td><td>ينفذ فقط إذا بدأ الأمر بـ«سايمون يقول».</td></tr>
+        <tr><td>صندوق الاتجاهات</td><td>صندوق وألعاب صغيرة: «ضع السيارة خلف الصندوق».</td></tr>
+        <tr><td>البحث عن الكنز</td><td>خبّئ لعبة وأعطه تعليمات صوتية فقط.</td></tr>
+        <tr><td>ليغو بالتعليمات</td><td>صِف له نموذجك خطوة خطوة ليبني مثله.</td></tr>
+        <tr><td>الحقيبة السحرية</td><td>3 أشياء، أخرج واحداً سراً: «ما الذي اختفى؟»</td></tr>
+        <tr><td>صوت مين؟</td><td>يغمض عينيه ويخمّن مصدر الصوت.</td></tr></tbody></table></div>
+      <div class="pc"><h3>أدوات مفيدة</h3><ul class="clean">
+        <li>لعبة «سايمون» الإلكترونية (تسلسل أصوات وألوان).</li><li>مكعبات ليغو Duplo.</li><li>بطاقات صور.</li>
+        <li>مؤقت مرئي أو ساعة رملية.</li><li>قصص صوتية عربية قصيرة.</li><li>لوحة مهام مصوّرة للروتين.</li></ul></div>
+      <div class="pc"><h3>للمعلمة</h3><ul class="clean">
+        <li>صف أمامي، بعيداً عن الباب والنافذة.</li><li>مناداة اسمه قبل التعليمة، مع إشارة أو صورة.</li>
+        <li>تقسيم المهمة إلى خطوات قصيرة.</li><li>ملاحظة أسبوعية عن الانتباه والاستماع.</li></ul></div>
+      <div class="pc"><h3>المختصون</h3><ul class="clean">
+        <li><b>فحص سمع شامل</b> أولاً.</li><li><b>تقييم المعالجة السمعية</b> (اسأل عن العمر المناسب له).</li>
+        <li><b>أخصائي تخاطب</b> لتقييم اللغة الاستقبالية.</li><li><b>إعادة تقييم الذكاء</b> بعد سنة تقريباً.</li></ul></div>
+      <div class="pc" style="border-color:var(--bad)"><h3>راجع الأخصائية مبكراً إذا</h3><ul class="clean">
+        <li>لا تحسّن بعد 8 أسابيع من التدريب المنتظم.</li><li>يطلب إعادة الكلام كثيراً أو يرفع صوت التلفاز.</li>
+        <li>صعوبة في النطق أو تكوين الجمل.</li><li>رفض متكرر للذهاب إلى الروضة.</li></ul></div>
+    </div>
+
+    <div class="pview" id="p-tests" hidden>
+      <p class="note">15 دقيقة في الأسابيع 0 و4 و8 و12، في غرفة هادئة. القيم المتوقعة تقريبية للعمر 5–6 سنوات.</p>
+      <details><summary>١. ترديد الأرقام (المتوقع ≈ 4)</summary>
+        <p>رقم كل ثانية. محاولتان لكل طول؛ إذا نجح في واحدة انتقل للأطول.</p>
+        <div class="tbl"><table><tbody class="seq">
+        <tr><td class="num">2</td><td>4 – 7</td><td>9 – 2</td></tr><tr><td class="num">3</td><td>3 – 8 – 1</td><td>6 – 2 – 9</td></tr>
+        <tr><td class="num">4</td><td>5 – 1 – 7 – 3</td><td>8 – 4 – 2 – 6</td></tr><tr><td class="num">5</td><td>2 – 9 – 4 – 7 – 1</td><td>6 – 3 – 8 – 1 – 5</td></tr>
+        <tr><td class="num">6</td><td>7 – 2 – 5 – 9 – 3 – 8</td><td>1 – 6 – 4 – 8 – 2 – 7</td></tr></tbody></table></div></details>
+      <details><summary>٢. ترديد الكلمات (المتوقع ≈ 3–4)</summary><ul class="clean">
+        <li>كلب، باب / شمس، موز</li><li>قلم، سمكة، كرسي / بيت، نجمة، حليب</li>
+        <li>ورقة، قط، ساعة، جبل / بحر، مفتاح، تفاحة، حذاء</li><li>شجرة، كوب، طائرة، باب، قمر / وردة، سيارة، خبز، عين، كرة</li></ul></details>
+      <details><summary>٣. تنفيذ التعليمات (المتوقع ≈ 3)</summary><ul class="clean">
+        <li>«المس أنفك».</li><li>«صفّق ثم المس رأسك».</li><li>«أحضر الكرة، ضعها على الكرسي، ثم اجلس».</li>
+        <li>«افتح الباب، أحضر القلم، أعطني إياه، ثم صفّق».</li></ul><p class="note">مرة واحدة، دون إشارة باليد.</p></details>
+      <details><summary>٤. كلمات المكان (من 10)</summary>
+        <p>بكوب ولعبة صغيرة: «ضع اللعبة …» فوق · تحت · داخل · خارج · بجانب · أمام · خلف · بين · يمين · يسار.</p>
+        <p class="note">الخطأ في اليمين واليسار طبيعي في هذا العمر.</p></details>
+      <details><summary>٥. مدة التركيز</summary><p>نشاط هادئ يحبه، وسجّل الدقائق حتى يتركه دون تدخل منك.</p></details>
+    </div>
+
+    <div class="pview" id="p-set" hidden>
+      <div class="pc"><h3>الصوت</h3><p class="note" id="vstatus"></p>
+        <select id="vmode"><option value="voice">صوت الجهاز يقرأ</option><option value="parent">أنا أقرأ بصوتي (تظهر الكلمة كبيرة)</option></select></div>
+      <div class="pc"><h3>عدد الجولات في اليوم</h3>
+        <select id="limit"><option>10</option><option>15</option><option>20</option><option>30</option></select>
+        <div class="row"><button class="pbtn ghost" id="more">السماح بـ 5 جولات إضافية اليوم</button></div></div>
+      <div class="pc"><h3>إضافته إلى شاشة الهاتف</h3><ul class="clean">
+        <li><b>آيفون:</b> افتح الرابط في Safari ← زر المشاركة ← «إضافة إلى الشاشة الرئيسية».</li>
+        <li><b>أندرويد:</b> افتح الرابط في Chrome ← القائمة ⋮ ← «إضافة إلى الشاشة الرئيسية».</li></ul>
+        <div class="row"><button class="pbtn ghost" id="fs">ملء الشاشة</button></div></div>
+      <div class="pc"><h3>إعادة الضبط</h3><div class="row"><button class="pbtn ghost" id="reset">إعادة مستويات الألعاب للبداية</button></div>
+        <p class="note">البيانات محفوظة على هذا الجهاز وهذا المتصفح فقط.</p></div>
+    </div>
+  </section>
+
+  <div class="modal" id="modal" hidden><div class="sheet"><div id="mEmoji">🦁</div><b>ملصق جديد!</b><button class="go" id="mOk">رائع!</button></div></div>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g id="owlsym">
+  <path d="M24 30 L38 46 L30 22Z" fill="#8B6BD9"/><path d="M96 30 L82 46 L90 22Z" fill="#8B6BD9"/>
+  <ellipse cx="60" cy="70" rx="42" ry="45" fill="#8B6BD9"/><ellipse cx="60" cy="84" rx="27" ry="28" fill="#C9B8F2"/>
+  <circle cx="44" cy="55" r="15" fill="#fff"/><circle cx="76" cy="55" r="15" fill="#fff"/><circle cx="46" cy="57" r="7" fill="#2B2340"/><circle cx="74" cy="57" r="7" fill="#2B2340"/>
+  <circle cx="48" cy="54" r="2.4" fill="#fff"/><circle cx="76" cy="54" r="2.4" fill="#fff"/>
+  <path d="M53 67 L60 76 L67 67Z" fill="#FFC94A"/><ellipse cx="44" cy="114" rx="9" ry="4" fill="#FFC94A"/><ellipse cx="76" cy="114" rx="9" ry="4" fill="#FFC94A"/>
+</g></defs></svg>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const today=()=>new Date().toISOString().slice(0,10);
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- الشاشات ---------- */
+let cur='start';
+function show(id){stopAll();cur=id;$$('.screen').forEach(s=>s.hidden=s.id!=='s-'+id);
+  $('#home').classList.toggle('ghost',['start','home','parent'].includes(id));
+  if(id==='home')renderHome();if(id==='stickers')renderBook();if(id==='parent')renderParent();
+  if(id==='g1')g1Idle();if(id==='g2')g2Idle();if(id==='g3')g3Idle();if(id==='quran')renderSurahs();}
+const bub=()=>$('#s-'+cur+' .bubble'),owl=()=>$('#s-'+cur+' .guide .owl');
+/* زر الرجوع في أندرويد: يرجع خطوة داخل التطبيق، ويُغلقه من الرئيسية فقط */
+window.__back=()=>{if(!$('#modal').hidden){$('#modal').hidden=true;return true}
+  if(cur==='quiz'){openSubj(act?act.subj.key:'ar');return true}
+  if(cur==='surah'){show('quran');return true}
+  if(cur!=='home'&&cur!=='start'){show('home');return true}return false};
+
+/* ---------- الصوت ---------- */
+/* داخل تطبيق أندرويد يتوفر جسر NativeTTS (محرك النطق في الهاتف)، وفي المتصفح نستخدم speechSynthesis */
+const NT=window.NativeTTS||null;
+const hasTTS=!!NT||('speechSynthesis' in window);let arVoice=null,enVoice=null,deVoice=null;let mode=store.get('malik-vmode',null);
+function pickVoice(){if(!hasTTS)return;
+  if(NT){arVoice=NT.has('ar')?'n':null;enVoice=NT.has('en')?'n':null;deVoice=NT.has('de')?'n':null}
+  else{const vs=speechSynthesis.getVoices();arVoice=vs.find(v=>/^ar/i.test(v.lang))||null;
+  enVoice=vs.find(v=>/^en-(US|GB)/i.test(v.lang))||vs.find(v=>/^en/i.test(v.lang))||null;deVoice=vs.find(v=>/^de/i.test(v.lang))||null}
+  if(!mode&&(arVoice||!NT))mode=arVoice?'voice':'parent';}
+if(hasTTS){pickVoice();if(NT){window.__ttsReady=pickVoice;setTimeout(pickVoice,1500)}else speechSynthesis.onvoiceschanged=pickVoice}
+const ttsCb={};let ttsId=0;window.__ttsDone=id=>{const f=ttsCb[id];delete ttsCb[id];f&&f()};
+let timers=[];const later=(f,ms)=>{const t=setTimeout(f,ms);timers.push(t);return t};
+let player=null;
+function stopAll(){timers.forEach(clearTimeout);timers=[];if(NT)NT.stop();else if(hasTTS)speechSynthesis.cancel();g3.running=false;const o=owl();o&&o.classList.remove('talk');
+  if(player){player.onended=null;player.pause();player=null}}
+function say(text,done,{show=true,lang='ar'}={}){
+  const en=lang!=='ar',vo={en:enVoice,de:deVoice}[lang],useVoice=hasTTS&&(en?!!vo:(mode||'parent')==='voice');
+  const b=bub(),o=owl();if(b&&show){b.textContent=text;b.dir=en?'ltr':'rtl';b.classList.toggle('big',!useVoice&&text.length<14)}
+  o&&o.classList.add('talk');
+  const fin0=()=>{o&&o.classList.remove('talk');done&&done()};
+  if(useVoice&&NT){let f=false;const fin=()=>{if(f)return;f=true;fin0()};const id=String(++ttsId);ttsCb[id]=fin;
+    later(fin,1800+text.length*150);NT.speak(text,lang,en?0.85:0.8,id);}
+  else if(useVoice){const u=new SpeechSynthesisUtterance(text);u.lang={ar:'ar-SA',en:'en-US',de:'de-DE'}[lang];u.rate=en?.85:.8;const v=en?vo:arVoice;if(v)u.voice=v;
+    let f=false;const fin=()=>{if(f)return;f=true;fin0()};u.onend=fin;u.onerror=fin;later(fin,1500+text.length*140);speechSynthesis.speak(u);}
+  else later(fin0,1300+text.length*80);}
+function sayList(list,gap,done){let i=0;const step=()=>{if(i>=list.length)return done&&done();say(list[i++],()=>later(step,gap))};step();}
+
+/* ---------- النجوم والملصقات والجولات ---------- */
+const STK=['🦁','🐘','🦒','🐼','🦄','🚀','🦖','🐢','🐙','🦋','🚒','🐬','🦉','🌈','🚂','🏆'];
+let stars=store.get('malik-stars',0);$('#starN').textContent=stars;
+function addStar(){const before=Math.floor(stars/5);stars++;store.set('malik-stars',stars);$('#starN').textContent=stars;
+  $('#stars').classList.remove('pop');void $('#stars').offsetWidth;$('#stars').classList.add('pop');
+  const after=Math.floor(stars/5);if(after>before&&after<=STK.length){later(()=>{$('#mEmoji').textContent=STK[after-1];$('#modal').hidden=false;say('حصلت على ملصق جديد',null,{show:false})},900)}}
+$('#mOk').onclick=()=>$('#modal').hidden=true;
+function rounds(){const r=store.get('malik-rounds',{d:'',n:0,extra:0});return r.d===today()?r:{d:today(),n:0,extra:0}}
+const limit=()=>+store.get('malik-limit',15);
+function countRound(game,level){const r=rounds();r.n++;store.set('malik-rounds',r);
+  const g=store.get('malik-games',{days:[],best:{}});if(!g.days.includes(today()))g.days.push(today());g.best[game]=Math.max(g.best[game]||0,level);store.set('malik-games',g);}
+const tired=()=>{const r=rounds();return r.n>=limit()+r.extra};
+function confetti(){if(reduce)return;const app=$('#app');const em=['⭐','🎉','✨','🌟','🎈'];
+  for(let i=0;i<22;i++){const s=document.createElement('span');s.className='conf';s.textContent=em[i%em.length];
+    s.style.left=Math.random()*95+'%';s.style.animationDelay=Math.random()*.4+'s';app.appendChild(s);setTimeout(()=>s.remove(),2400)}}
+function cheer(){confetti();addStar();const w=['أحسنت يا مالك!','رائع!','ممتاز يا بطل!','برافو!'];say(w[Math.floor(Math.random()*w.length)])}
+function lvlDots(el,n,max){el.innerHTML=Array.from({length:max},(_,i)=>`<i class="${i<n?'on':''}"></i>`).join('')}
+function guardStart(fn){if(tired()){show('rest');say('أحسنت اليوم، نلعب غداً',null,{show:false});return}fn()}
+
+/* ---------- الرئيسية ---------- */
+function renderHome(){const map={6:'g1',0:'g2',1:'g3',2:'g1',3:'g2',4:'g3'};const t=map[new Date().getDay()];
+  $$('.today').forEach(x=>x.remove());if(t)$(`.tile[data-go="${t}"]`).insertAdjacentHTML('beforeend','<span class="today">لعبة اليوم</span>');
+  const got=Math.min(Math.floor(stars/5),STK.length);$('#stkSmall').textContent=`عندك ${got} من ${STK.length} ملصقاً`;qHome();}
+$$('[data-go]').forEach(b=>b.addEventListener('click',()=>{const g=b.dataset.go;
+  if(g.startsWith('g')&&tired()){show('rest');return}show(g);
+  const intro={g1:'اسمع الأسماء، ثم اضغط الصور بالترتيب',g2:'اسمع أين نضع الشيء، ثم اضغط المكان',g3:'اضغط القطة عندما تسمع كلمة قطة',stickers:'هذه ملصقاتك'}[g];
+  if(intro)say(intro);}));
+$('#begin').onclick=()=>{show('home');say('ماذا نلعب اليوم يا مالك؟')};
+$('#home').onclick=()=>show('home');
+
+/* ---------- الملصقات ---------- */
+function renderBook(){const got=Math.min(Math.floor(stars/5),STK.length);
+  $('#book').innerHTML=STK.map((s,i)=>`<div class="stk ${i<got?'':'lock'}">${i<got?s:'?'}</div>`).join('');
+  const rem=stars%5;$('#meter').style.width=(got>=STK.length?100:rem*20)+'%';
+  $('#nextTxt').textContent=got>=STK.length?'جمعت كل الملصقات! 🏆':`باقي ${5-rem} ⭐ للملصق التالي`;}
+
+const ITEMS=[{e:'🍎',n:'تفاحة'},{e:'🐱',n:'قطة'},{e:'🚗',n:'سيارة'},{e:'⚽',n:'كرة'},{e:'🌙',n:'قمر'},{e:'🐟',n:'سمكة'},{e:'🏠',n:'بيت'},{e:'⭐',n:'نجمة'},{e:'🍌',n:'موزة'},{e:'☀️',n:'شمس'}];
+
+/* ---------- لعبة 1 ---------- */
+const g1={lvl:store.get('malik-g1',2),ok:0,bad:0,seq:[],pos:0,live:false};
+function g1Idle(){lvlDots($('#l1'),g1.lvl-1,5);$('#g1area').innerHTML='<div class="ear"><span>👂</span></div>';$('#g1go').disabled=false;$('#g1rep').disabled=true}
+function g1Speak(){$('#g1area').innerHTML='<div class="ear"><span>👂</span></div>';$('#g1go').disabled=true;$('#g1rep').disabled=true;g1.live=false;
+  say('اسمع جيداً',()=>later(()=>sayList(g1.seq.map(x=>x.n),650,g1Show),400));}
+$('#g1go').onclick=()=>guardStart(()=>{stopAll();g1.seq=shuffle(ITEMS).slice(0,g1.lvl);g1.pos=0;g1Speak()});
+$('#g1rep').onclick=()=>{stopAll();g1.pos=0;g1Speak()};
+function g1Show(){const n=g1.lvl>3?9:6;
+  const opts=shuffle([...g1.seq,...shuffle(ITEMS.filter(x=>!g1.seq.includes(x))).slice(0,n-g1.lvl)]);
+  $('#g1area').innerHTML='<div class="picks">'+opts.map(o=>`<button class="pick" data-n="${o.n}" aria-label="${o.n}">${o.e}</button>`).join('')+'</div>';
+  bub().textContent='اضغط الصور بالترتيب';bub().classList.remove('big');g1.live=true;$('#g1rep').disabled=false;}
+$('#g1area').addEventListener('click',e=>{const b=e.target.closest('.pick');if(!b||!g1.live||b.classList.contains('ok'))return;
+  if(b.dataset.n===g1.seq[g1.pos].n){g1.pos++;b.classList.add('ok');b.insertAdjacentHTML('beforeend',`<sub>${g1.pos}</sub>`);if(g1.pos===g1.seq.length)g1End(true)}
+  else{b.classList.add('no');g1End(false)}});
+function g1End(win){g1.live=false;$('#g1rep').disabled=true;$('#g1go').disabled=false;
+  if(win){g1.ok++;g1.bad=0;cheer();if(g1.ok>=2&&g1.lvl<6){g1.lvl++;g1.ok=0}}
+  else{g1.bad++;g1.ok=0;say('لنحاول مرة أخرى');$$('#g1area .pick').forEach(p=>{const i=g1.seq.findIndex(x=>x.n===p.dataset.n);if(i>=0&&!p.classList.contains('ok')){p.classList.add('ok');p.insertAdjacentHTML('beforeend',`<sub>${i+1}</sub>`)}});
+    if(g1.bad>=2&&g1.lvl>2){g1.lvl--;g1.bad=0}}
+  store.set('malik-g1',g1.lvl);lvlDots($('#l1'),g1.lvl-1,5);countRound('g1',win?g1.seq.length:0);}
+
+/* ---------- لعبة 2 ---------- */
+const POS={up:{t:'فوق',r:1,c:2,s:'فوق'},down:{t:'تحت',r:3,c:2,s:'تحت'},in:{t:'داخل',r:2,c:2,s:'داخل'},right:{t:'يمين',r:2,c:3,s:'على يمين'},left:{t:'يسار',r:2,c:1,s:'على يسار'}};
+const LV2={1:['up','down'],2:['up','down','in'],3:['up','down','in','right','left']};
+const g2={lvl:store.get('malik-g2',1),streak:0,target:null,item:null,live:false,text:''};
+function g2Scene(){let h='';for(let r=1;r<=3;r++)for(let c=1;c<=3;c++){const k=Object.keys(POS).find(k=>POS[k].r===r&&POS[k].c===c);
+  h+=k?`<button class="slot ${k==='in'?'box':''}" data-k="${k}" aria-label="${POS[k].t}">${k==='in'?'📦':''}</button>`:'<div class="slot void"></div>'}$('#scene').innerHTML=h;}
+function g2Idle(){g2Scene();lvlDots($('#l2'),g2.lvl,3);$('#g2go').disabled=false;$('#g2rep').disabled=true}
+function g2Say(){$('#g2rep').disabled=true;say(g2.text,()=>{g2.live=true;$('#g2rep').disabled=false})}
+$('#g2go').onclick=()=>guardStart(()=>{stopAll();g2Scene();const o=LV2[g2.lvl];let k;do{k=o[Math.floor(Math.random()*o.length)]}while(k===g2.target&&o.length>1);
+  g2.target=k;g2.item=shuffle(ITEMS.filter(x=>x.n!=='بيت'))[0];g2.text=`ضع ال${g2.item.n} ${POS[k].s} الصندوق`;$('#g2go').disabled=true;g2.live=false;g2Say()});
+$('#g2rep').onclick=()=>{stopAll();g2Say()};
+$('#scene').addEventListener('click',e=>{const b=e.target.closest('.slot');if(!b||!g2.live||!b.dataset.k)return;g2.live=false;
+  const k=b.dataset.k;$('#g2rep').disabled=true;$('#g2go').disabled=false;b.textContent=k==='in'?'📦'+g2.item.e:g2.item.e;
+  if(k===g2.target){b.classList.add('ok');g2.streak++;cheer();if(g2.streak>=4&&g2.lvl<3){g2.lvl++;g2.streak=0}}
+  else{b.classList.add('no');$(`.slot[data-k="${g2.target}"]`).classList.add('hint');g2.streak=0;say('مكانها هنا: '+POS[g2.target].t)}
+  store.set('malik-g2',g2.lvl);lvlDots($('#l2'),g2.lvl,3);countRound('g2',g2.lvl);});
+
+/* ---------- لعبة 3 ---------- */
+const TARGET='قطة',DIST=['تفاحة','كرة','سيارة','بيت','قمر','سمكة','نجمة','موزة','شمس','باب','قلم','وردة'];
+const LV3={1:{n:10,gap:1700},2:{n:14,gap:1400},3:{n:18,gap:1150},4:{n:24,gap:1000}};
+const g3={lvl:store.get('malik-g3',1),list:[],i:0,cur:false,handled:true,hits:0,miss:0,fa:0,running:false};
+function g3Tally(){$('#tally').innerHTML='⭐'.repeat(g3.hits)+'<span style="opacity:.35">'+'⭐'.repeat(g3.miss)+'</span>'}
+function g3Idle(){lvlDots($('#l3'),g3.lvl,4);$('#tap').disabled=true;$('#g3go').disabled=false;$('#tally').innerHTML=''}
+$('#g3go').onclick=()=>guardStart(()=>{stopAll();const L=LV3[g3.lvl],nt=Math.round(L.n*.27);let list;
+  do{list=shuffle([...Array(nt).fill(TARGET),...Array.from({length:L.n-nt},()=>DIST[Math.floor(Math.random()*DIST.length)])])}while(list.some((w,i)=>i>0&&w===TARGET&&list[i-1]===TARGET));
+  Object.assign(g3,{list,i:0,cur:false,handled:true,hits:0,miss:0,fa:0,running:true});g3Tally();$('#g3go').disabled=true;$('#tap').disabled=false;
+  say('استعد! اضغط عندما تسمع قطة',()=>later(g3Next,900))});
+function g3Next(){if(!g3.running)return;if(g3.cur&&!g3.handled){g3.miss++;g3Tally()}if(g3.i>=g3.list.length)return g3End();
+  const w=g3.list[g3.i++];g3.cur=w===TARGET;g3.handled=false;say(w,()=>later(g3Next,LV3[g3.lvl].gap));}
+$('#tap').addEventListener('click',()=>{if(!g3.running)return;const t=$('#tap');
+  if(g3.cur&&!g3.handled){g3.hits++;g3.handled=true;t.className='bigtap ok'}else{g3.fa++;t.className='bigtap no'}g3Tally();setTimeout(()=>t.className='bigtap',350)});
+function g3End(){g3.running=false;$('#tap').disabled=true;$('#g3go').disabled=false;
+  if(g3.miss===0&&g3.fa<=1){cheer();if(g3.lvl<4)g3.lvl++}
+  else{if(g3.hits>0)addStar();say(`التقطت ${g3.hits}، لنحاول مرة أخرى`);if(g3.miss+g3.fa>=4&&g3.lvl>1)g3.lvl--}
+  store.set('malik-g3',g3.lvl);lvlDots($('#l3'),g3.lvl,4);countRound('g3',g3.lvl);}
+
+/* ---------- المذاكرة: بيانات المنهج ---------- */
+const AR=[['أ','الألف','أرنب','🐰'],['ب','الباء','بطة','🦆'],['ت','التاء','تفاحة','🍎'],['ث','الثاء','ثعلب','🦊'],['ج','الجيم','جمل','🐫'],['ح','الحاء','حصان','🐴'],
+ ['خ','الخاء','خروف','🐑'],['د','الدال','دب','🐻'],['ذ','الذال','ذرة','🌽'],['ر','الراء','رز','🍚'],['ز','الزاي','زرافة','🦒'],['س','السين','سمكة','🐟'],
+ ['ش','الشين','شمس','☀️'],['ص','الصاد','صاروخ','🚀'],['ض','الضاد','ضفدع','🐸'],['ط','الطاء','طائرة','✈️'],['ظ','الظاء','ظرف','✉️'],['ع','العين','عنب','🍇'],
+ ['غ','الغين','غزال','🦌'],['ف','الفاء','فيل','🐘'],['ق','القاف','قطة','🐱'],['ك','الكاف','كلب','🐶'],['ل','اللام','ليمون','🍋'],['م','الميم','موزة','🍌'],
+ ['ن','النون','نحلة','🐝'],['ه','الهاء','هدية','🎁'],['و','الواو','وردة','🌹'],['ي','الياء','يد','✋']];
+const EN={A:['apple','🍎'],B:['ball','⚽'],C:['cat','🐱'],D:['dog','🐶'],E:['egg','🥚'],F:['fish','🐟'],G:['grapes','🍇'],H:['hat','🎩'],I:['ice cream','🍦'],
+ J:['juice','🧃'],K:['kite','🪁'],L:['lion','🦁'],M:['moon','🌙'],N:['nose','👃'],O:['orange','🍊'],P:['pig','🐷'],Q:['queen','👸'],R:['rabbit','🐰'],S:['sun','☀️'],
+ T:['tree','🌳'],U:['umbrella','☂️'],V:['van','🚐'],W:['watch','⌚'],X:null,Y:['yo-yo','🪀'],Z:['zebra','🦓']};
+const ENL=Object.keys(EN);
+const SIGHT=['I','a','the','see','can','is','it','my','like','we','go','to','and','you','he','she','in','on','up','me'];
+const OBJ=[['apples','🍎'],['balls','⚽'],['stars','⭐'],['fish','🐟'],['cars','🚗'],['cats','🐱'],['ducks','🦆']];
+const SHAPES={circle:'<circle cx="40" cy="40" r="32" fill="#FF7B6B"/>',square:'<rect x="10" y="10" width="60" height="60" rx="4" fill="#3E8FD6"/>',
+ triangle:'<path d="M40 8 L74 70 L6 70Z" fill="#4CC3A3"/>',rectangle:'<rect x="4" y="22" width="72" height="38" rx="4" fill="#8B6BD9"/>',
+ star:'<path d="M40 6 L49 30 L75 31 L54 47 L62 73 L40 58 L18 73 L26 47 L5 31 L31 30Z" fill="#FFC94A"/>',heart:'<path d="M40 72 C10 50 4 34 14 20 C24 8 38 14 40 26 C42 14 56 8 66 20 C76 34 70 50 40 72Z" fill="#E2638F"/>'};
+const svgShape=k=>`<svg viewBox="0 0 80 80" aria-label="${k}">${SHAPES[k]}</svg>`;
+
+const curr=()=>{const c=store.get('malik-cur',{});return{ar:c.ar||AR.map(x=>x[0]),en:c.en||ENL,num:c.num||10}};
+let stat=store.get('malik-study',{acts:{},miss:{}});
+function weighted(arr,key){const w=arr.map(x=>1+2*(stat.miss[key(x)]||0));let r=Math.random()*w.reduce((a,b)=>a+b,0);
+  for(let i=0;i<arr.length;i++){r-=w[i];if(r<=0)return arr[i]}return arr[arr.length-1]}
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+function others(pool,target,n,eq=(a,b)=>a===b){return shuffle(pool.filter(x=>!eq(x,target))).slice(0,n)}
+const ensure=(pool,full,n)=>pool.length>=n?pool:[...pool,...shuffle(full.filter(x=>!pool.includes(x))).slice(0,n-pool.length)];
+const opt=(html,val,cls='')=>({html,val,cls});
+
+function qArLetter(){const studied=AR.filter(x=>curr().ar.includes(x[0]));const pool=studied.length?studied:AR;
+  const t=weighted(pool,x=>'ar:'+x[0]),opts=shuffle([t,...others(ensure(pool,AR,3),t,2)]);
+  return{key:'ar:'+t[0],lang:'ar',say:`أين حرف ${t[1]}؟`,show:'',opts:opts.map(x=>opt(x[0],x[0])),ans:t[0],fix:`هذا حرف ${t[1]}`}}
+function qArFirst(){const studied=AR.filter(x=>curr().ar.includes(x[0]));const pool=studied.length?studied:AR;
+  const t=weighted(pool,x=>'ar:'+x[0]),opts=shuffle([t,...others(ensure(pool,AR,3),t,2)]);
+  return{key:'ar:'+t[0],lang:'ar',say:`${t[2]}. بأيّ حرف تبدأ كلمة ${t[2]}؟`,show:`<span class="big">${t[3]}</span>`,opts:opts.map(x=>opt(x[0],x[0])),ans:t[0],fix:`${t[2]} تبدأ بحرف ${t[1]}`}}
+function qEnLetter(){const pool=ensure(curr().en,ENL,3);const studied=curr().en.length?curr().en:ENL;
+  const t=weighted(studied,x=>'en:'+x),opts=shuffle([t,...others(pool,t,2)]);
+  return{key:'en:'+t,lang:'en',say:`Where is the letter ${t}?`,show:'',opts:opts.map(x=>opt(`${x}<small>${x.toLowerCase()}</small>`,x)),ans:t,fix:`This is ${t}`}}
+function qEnFirst(){const studied=(curr().en.length?curr().en:ENL).filter(x=>EN[x]);const pool=ensure(studied,ENL.filter(x=>EN[x]),3);
+  const t=weighted(studied.length?studied:pool,x=>'en:'+x),w=EN[t],opts=shuffle([t,...others(pool,t,2)]);
+  return{key:'en:'+t,lang:'en',say:`${w[0]}. What letter does ${w[0]} start with?`,show:`<span class="big">${w[1]}</span>`,opts:opts.map(x=>opt(`${x}<small>${x.toLowerCase()}</small>`,x)),ans:t,fix:`${w[0]} starts with ${t}`}}
+function qEnSight(){const t=weighted(SIGHT,x=>'sw:'+x),opts=shuffle([t,...others(SIGHT,t,2)]);
+  return{key:'sw:'+t,lang:'en',say:`Tap the word: ${t}`,show:'',opts:opts.map(x=>opt(x,x,'word')),ans:t,fix:`This word is ${t}`}}
+function nearNums(n,max){const s=new Set([n]);let g=0;while(s.size<3&&g++<50){const d=rnd(-3,3);const v=n+d;if(v>=1&&v<=max)s.add(v)}
+  while(s.size<3)s.add(s.size+n);return shuffle([...s])}
+function qCount(){const max=Math.min(curr().num,15),n=weighted(Array.from({length:max},(_,i)=>i+1),x=>'cnt:'+x),o=OBJ[rnd(0,OBJ.length-1)];
+  return{key:'cnt:'+n,lang:'en',say:`How many ${o[0]}?`,show:`<span class="${n>8?'':''}">${o[1].repeat(n)}</span>`,sm:n>8,opts:nearNums(n,max+2).map(x=>opt(x,x)),ans:n,fix:`There are ${n} ${o[0]}`}}
+function qNum(){const max=curr().num,n=weighted(Array.from({length:max},(_,i)=>i+1),x=>'num:'+x);
+  const s=new Set([n]);if(n>9){const r=+String(n).split('').reverse().join('');if(r!==n&&r>=1&&r<=99)s.add(r)}
+  let g=0;while(s.size<3&&g++<50){const v=n+rnd(-2,2);if(v>=1&&v<=max)s.add(v)}while(s.size<3)s.add(n+s.size);
+  return{key:'num:'+n,lang:'en',say:`Tap the number ${n}`,show:'',opts:shuffle([...s]).map(x=>opt(x,x)),ans:n,fix:`This is ${n}`}}
+function qAdd(){const a=rnd(1,5),b=rnd(1,Math.min(5,10-a)),o=OBJ[rnd(0,OBJ.length-1)],s=a+b;
+  return{key:'add:'+s,lang:'en',say:`${a} ${o[0]} and ${b} ${o[0]}. How many altogether?`,show:`${o[1].repeat(a)}<span class="plus">+</span>${o[1].repeat(b)}`,sm:true,
+    opts:nearNums(s,10).map(x=>opt(x,x)),ans:s,fix:`${a} plus ${b} is ${s}`}}
+function qShape(){const ks=Object.keys(SHAPES),t=weighted(ks,x=>'shp:'+x),opts=shuffle([t,...others(ks,t,2)]);
+  return{key:'shp:'+t,lang:'en',say:`Tap the ${t}`,show:'',opts:opts.map(x=>opt(svgShape(x),x)),ans:t,fix:`This is the ${t}`}}
+function qMore(){const o=OBJ[rnd(0,OBJ.length-1)];let a=rnd(1,9),b=rnd(1,9);while(a===b)b=rnd(1,9);
+  return{key:'more',lang:'en',say:'Which group has more?',show:'',two:true,opts:[opt(o[1].repeat(a),a,'grp'),opt(o[1].repeat(b),b,'grp')],ans:Math.max(a,b),fix:'This group has more'}}
+
+const DE={tiere:[['der Hund','🐶'],['die Katze','🐱'],['die Maus','🐭'],['der Vogel','🐦'],['der Fisch','🐟'],['das Pferd','🐴'],['die Kuh','🐮'],['der Löwe','🦁'],['die Ente','🦆'],['der Hase','🐰']],
+ sachen:[['der Apfel','🍎'],['die Banane','🍌'],['der Ball','⚽'],['das Auto','🚗'],['das Haus','🏠'],['das Buch','📕'],['die Sonne','☀️'],['der Mond','🌙'],['der Baum','🌳'],['die Blume','🌸']],
+ koerper:[['die Nase','👃'],['das Auge','👁️'],['das Ohr','👂'],['der Mund','👄'],['die Hand','✋'],['der Fuß','🦶']]};
+const DEF=[['Rot','#E53935'],['Blau','#1E88E5'],['Gelb','#FDD835'],['Grün','#43A047'],['Schwarz','#212121'],['Weiß','#FFFFFF'],['Orange','#FB8C00'],['Rosa','#F48FB1'],['Lila','#8E24AA'],['Braun','#795548']];
+const DEZ=['eins','zwei','drei','vier','fünf','sechs','sieben','acht','neun','zehn'];
+const qDeWord=cat=>()=>{const L=DE[cat],t=weighted(L,x=>'de:'+x[0]),opts=shuffle([t,...others(L,t,2)]);
+  return{key:'de:'+t[0],lang:'de',say:`Wo ist ${t[0]}?`,show:'',opts:opts.map(x=>opt(x[1],x[0])),ans:t[0],fix:`Das ist ${t[0]}`}};
+function qDeColor(){const t=weighted(DEF,x=>'de:'+x[0]),opts=shuffle([t,...others(DEF,t,2)]);
+  return{key:'de:'+t[0],lang:'de',say:`Tippe auf ${t[0]}`,show:'',opts:opts.map(x=>opt(`<span class="dot" style="background:${x[1]}"></span>`,x[0])),ans:t[0],fix:`Das ist ${t[0]}`}}
+function qDeNum(){const ns=DEZ.map((w,i)=>i+1),n=weighted(ns,x=>'dez:'+x);const opts=nearNums(n,10);
+  return{key:'dez:'+n,lang:'de',say:`Tippe auf ${DEZ[n-1]}`,show:'',opts:opts.map(x=>opt(x,x)),ans:n,fix:`Das ist ${DEZ[n-1]}`}}
+
+const SUBJ={
+  de:{t:'Deutsch',lang:'de',intro:'Hallo! Wir lernen Deutsch!',acts:[{id:'de1',t:'Tiere',d:'Wo ist der Hund?',art:'🐶',fn:qDeWord('tiere')},{id:'de2',t:'Sachen',d:'Apfel, Ball, Haus…',art:'🍎',fn:qDeWord('sachen')},
+    {id:'de3',t:'Körper',d:'Nase, Auge, Ohr…',art:'👂',fn:qDeWord('koerper')},{id:'de4',t:'Farben',d:'Rot, Blau, Gelb…',art:'🎨',fn:qDeColor},{id:'de5',t:'Zahlen',d:'eins bis zehn',art:'3',fn:qDeNum}]},
+  ar:{t:'العربي',lang:'ar',intro:'هيا نذاكر العربي، اختر نشاطاً',acts:[{id:'ar1',t:'اسمع الحرف',d:'اسمع اسم الحرف واضغطه',art:'ب',fn:qArLetter},{id:'ar2',t:'أول حرف',d:'بأي حرف تبدأ الكلمة؟',art:'🐰',fn:qArFirst}]},
+  en:{t:'English',lang:'en',intro:"Let's learn English!",acts:[{id:'en1',t:'Listen & tap',d:'Find the letter',art:'B',fn:qEnLetter},{id:'en2',t:'First letter',d:'What does it start with?',art:'🍎',fn:qEnFirst},{id:'en3',t:'Sight words',d:'Find the word',art:'see',fn:qEnSight}]},
+  ma:{t:'Math',lang:'en',intro:"Let's do Math!",acts:[{id:'m1',t:'Count',d:'How many?',art:'🍎',fn:qCount},{id:'m2',t:'Numbers',d:'Find the number',art:'15',fn:qNum},
+    {id:'m3',t:'Add',d:'Put them together',art:'+',fn:qAdd},{id:'m4',t:'Shapes',d:'Find the shape',art:'🔺',fn:qShape},{id:'m5',t:'More',d:'Which has more?',art:'⚖️',fn:qMore}]}};
+const ACT={};Object.entries(SUBJ).forEach(([k,s])=>{s.key=k;s.acts.forEach(a=>{a.subj=s;ACT[a.id]=a})});
+const PRAISE={ar:['أحسنت','ممتاز','رائع'],en:['Great!','Well done!','Super!'],de:['Super!','Toll!','Prima!']};
+
+/* ---------- المذاكرة: المحرك ---------- */
+let subjKey='ar',act=null;const Q={n:0,right:0,res:[],q:null,live:false};
+const sTired=()=>{const r=srounds();return r.n>=+store.get('malik-slimit',6)+r.extra};
+function srounds(){const r=store.get('malik-srounds',{d:'',n:0,extra:0});return r.d===today()?r:{d:today(),n:0,extra:0}}
+const pct=id=>{const a=stat.acts[id];return a&&a.t?Math.round(100*a.r/a.t):null};
+function openSubj(k){subjKey=k;const s=SUBJ[k];show('subj');
+  $('#actlist').innerHTML=s.acts.map(a=>{const p=pct(a.id);return`<button class="card s-${k}" data-act="${a.id}" dir="${s.lang!=='ar'?'ltr':'rtl'}"><span class="art">${a.art}</span><span><b>${a.t}</b><small>${a.d}</small></span>${p!=null?`<span class="acc">${p}%</span>`:''}</button>`}).join('');
+  say(s.intro,null,{lang:s.lang});}
+$$('[data-subj]').forEach(b=>b.addEventListener('click',()=>openSubj(b.dataset.subj)));
+$('#actlist').addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b)return;openAct(b.dataset.act)});
+function openAct(id){if(sTired()){show('rest');return}act=ACT[id];show('quiz');Object.assign(Q,{n:0,right:0,res:[],live:false});$('#qgo').disabled=true;nextQ();}
+function dots(){$('#qdots').innerHTML=Array.from({length:5},(_,i)=>`<i class="${Q.res[i]===1?'ok':Q.res[i]===0?'no':i===Q.n?'cur':''}"></i>`).join('')}
+function nextQ(){if(Q.n>=5)return endQ();const q=Q.q=act.fn();dots();
+  const sh=$('#qshow');sh.innerHTML=q.show;sh.className='qshow'+(q.sm?' sm':'');
+  const op=$('#qopts');op.className='qopts'+(q.two?' two':'');op.dir=q.lang!=='ar'?'ltr':'rtl';
+  op.innerHTML=q.opts.map(o=>`<button class="opt ${o.cls}" data-v="${o.val}">${o.html}</button>`).join('');
+  Q.live=true;$('#qrep').disabled=false;say(q.say,null,{lang:q.lang});}
+function record(ok){const a=stat.acts[act.id]||{r:0,t:0};a.t++;if(ok)a.r++;stat.acts[act.id]=a;
+  const k=Q.q.key;stat.miss[k]=ok?Math.max(0,(stat.miss[k]||0)-1):(stat.miss[k]||0)+1;if(!stat.miss[k])delete stat.miss[k];store.set('malik-study',stat);}
+$('#qopts').addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b||!Q.live)return;Q.live=false;stopAll();
+  const q=Q.q,ok=String(q.ans)===b.dataset.v;record(ok);Q.res.push(ok?1:0);Q.n++;
+  if(ok){Q.right++;b.classList.add('ok');say(PRAISE[q.lang][rnd(0,2)],()=>later(nextQ,300),{lang:q.lang})}
+  else{b.classList.add('no');$$('#qopts .opt').forEach(o=>{if(o.dataset.v===String(q.ans))o.classList.add('ok')});say(q.fix,()=>later(nextQ,700),{lang:q.lang})}});
+$('#qrep').onclick=()=>{if(Q.q&&Q.live){stopAll();say(Q.q.say,null,{lang:Q.q.lang})}};
+$('#qback').onclick=()=>openSubj(act?act.subj.key:'ar');
+$('#qgo').onclick=()=>openAct(act.id);
+function endQ(){dots();Q.live=false;$('#qrep').disabled=true;$('#qopts').innerHTML='';const L=act.subj.lang;
+  $('#qshow').className='qshow';$('#qshow').innerHTML=`<div class="qend">${'⭐'.repeat(Q.right)}${'<span style="opacity:.25">⭐</span>'.repeat(5-Q.right)}</div>`;
+  if(Q.right>=3){confetti();addStar();if(Q.right===5)later(addStar,600)}
+  say(L==='en'?`You got ${Q.right} out of 5!`:L==='de'?`${Q.right} von 5!`:`${Q.right} من 5، ${Q.right>=3?'أحسنت':'نحاول مرة أخرى'}`,null,{lang:L});
+  const r=srounds();r.n++;store.set('malik-srounds',r);
+  const g=store.get('malik-games',{days:[],best:{}});if(!g.days.includes(today()))g.days.push(today());store.set('malik-games',g);
+  $('#qgo').disabled=false;}
+
+/* ---------- القرآن: النص (رسم عثماني) والتسجيلات ---------- */
+const QURAN=[[1,"الفاتحة",["بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ","ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ","ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ","مَٰلِكِ يَوۡمِ ٱلدِّينِ","إِيَّاكَ نَعۡبُدُ وَإِيَّاكَ نَسۡتَعِينُ","ٱهۡدِنَا ٱلصِّرَٰطَ ٱلۡمُسۡتَقِيمَ","صِرَٰطَ ٱلَّذِينَ أَنۡعَمۡتَ عَلَيۡهِمۡ غَيۡرِ ٱلۡمَغۡضُوبِ عَلَيۡهِمۡ وَلَا ٱلضَّآلِّينَ"]],[114,"الناس",["قُلۡ أَعُوذُ بِرَبِّ ٱلنَّاسِ","مَلِكِ ٱلنَّاسِ","إِلَٰهِ ٱلنَّاسِ","مِن شَرِّ ٱلۡوَسۡوَاسِ ٱلۡخَنَّاسِ","ٱلَّذِي يُوَسۡوِسُ فِي صُدُورِ ٱلنَّاسِ","مِنَ ٱلۡجِنَّةِ وَٱلنَّاسِ"]],[113,"الفلق",["قُلۡ أَعُوذُ بِرَبِّ ٱلۡفَلَقِ","مِن شَرِّ مَا خَلَقَ","وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ","وَمِن شَرِّ ٱلنَّفَّـٰثَٰتِ فِي ٱلۡعُقَدِ","وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ"]],[112,"الإخلاص",["قُلۡ هُوَ ٱللَّهُ أَحَدٌ","ٱللَّهُ ٱلصَّمَدُ","لَمۡ يَلِدۡ وَلَمۡ يُولَدۡ","وَلَمۡ يَكُن لَّهُۥ كُفُوًا أَحَدُۢ"]],[111,"المسد",["تَبَّتۡ يَدَآ أَبِي لَهَبٖ وَتَبَّ","مَآ أَغۡنَىٰ عَنۡهُ مَالُهُۥ وَمَا كَسَبَ","سَيَصۡلَىٰ نَارٗا ذَاتَ لَهَبٖ","وَٱمۡرَأَتُهُۥ حَمَّالَةَ ٱلۡحَطَبِ","فِي جِيدِهَا حَبۡلٞ مِّن مَّسَدِۭ"]],[110,"النصر",["إِذَا جَآءَ نَصۡرُ ٱللَّهِ وَٱلۡفَتۡحُ","وَرَأَيۡتَ ٱلنَّاسَ يَدۡخُلُونَ فِي دِينِ ٱللَّهِ أَفۡوَاجٗا","فَسَبِّحۡ بِحَمۡدِ رَبِّكَ وَٱسۡتَغۡفِرۡهُۚ إِنَّهُۥ كَانَ تَوَّابَۢا"]],[109,"الكافرون",["قُلۡ يَـٰٓأَيُّهَا ٱلۡكَٰفِرُونَ","لَآ أَعۡبُدُ مَا تَعۡبُدُونَ","وَلَآ أَنتُمۡ عَٰبِدُونَ مَآ أَعۡبُدُ","وَلَآ أَنَا۠ عَابِدٞ مَّا عَبَدتُّمۡ","وَلَآ أَنتُمۡ عَٰبِدُونَ مَآ أَعۡبُدُ","لَكُمۡ دِينُكُمۡ وَلِيَ دِينِ"]],[108,"الكوثر",["إِنَّآ أَعۡطَيۡنَٰكَ ٱلۡكَوۡثَرَ","فَصَلِّ لِرَبِّكَ وَٱنۡحَرۡ","إِنَّ شَانِئَكَ هُوَ ٱلۡأَبۡتَرُ"]],[107,"الماعون",["أَرَءَيۡتَ ٱلَّذِي يُكَذِّبُ بِٱلدِّينِ","فَذَٰلِكَ ٱلَّذِي يَدُعُّ ٱلۡيَتِيمَ","وَلَا يَحُضُّ عَلَىٰ طَعَامِ ٱلۡمِسۡكِينِ","فَوَيۡلٞ لِّلۡمُصَلِّينَ","ٱلَّذِينَ هُمۡ عَن صَلَاتِهِمۡ سَاهُونَ","ٱلَّذِينَ هُمۡ يُرَآءُونَ","وَيَمۡنَعُونَ ٱلۡمَاعُونَ"]],[106,"قريش",["لِإِيلَٰفِ قُرَيۡشٍ","إِۦلَٰفِهِمۡ رِحۡلَةَ ٱلشِّتَآءِ وَٱلصَّيۡفِ","فَلۡيَعۡبُدُواْ رَبَّ هَٰذَا ٱلۡبَيۡتِ","ٱلَّذِيٓ أَطۡعَمَهُم مِّن جُوعٖ وَءَامَنَهُم مِّنۡ خَوۡفِۭ"]],[105,"الفيل",["أَلَمۡ تَرَ كَيۡفَ فَعَلَ رَبُّكَ بِأَصۡحَٰبِ ٱلۡفِيلِ","أَلَمۡ يَجۡعَلۡ كَيۡدَهُمۡ فِي تَضۡلِيلٖ","وَأَرۡسَلَ عَلَيۡهِمۡ طَيۡرًا أَبَابِيلَ","تَرۡمِيهِم بِحِجَارَةٖ مِّن سِجِّيلٖ","فَجَعَلَهُمۡ كَعَصۡفٖ مَّأۡكُولِۭ"]],[104,"الهمزة",["وَيۡلٞ لِّكُلِّ هُمَزَةٖ لُّمَزَةٍ","ٱلَّذِي جَمَعَ مَالٗا وَعَدَّدَهُۥ","يَحۡسَبُ أَنَّ مَالَهُۥٓ أَخۡلَدَهُۥ","كَلَّاۖ لَيُنۢبَذَنَّ فِي ٱلۡحُطَمَةِ","وَمَآ أَدۡرَىٰكَ مَا ٱلۡحُطَمَةُ","نَارُ ٱللَّهِ ٱلۡمُوقَدَةُ","ٱلَّتِي تَطَّلِعُ عَلَى ٱلۡأَفۡـِٔدَةِ","إِنَّهَا عَلَيۡهِم مُّؤۡصَدَةٞ","فِي عَمَدٖ مُّمَدَّدَةِۭ"]],[103,"العصر",["وَٱلۡعَصۡرِ","إِنَّ ٱلۡإِنسَٰنَ لَفِي خُسۡرٍ","إِلَّا ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّـٰلِحَٰتِ وَتَوَاصَوۡاْ بِٱلۡحَقِّ وَتَوَاصَوۡاْ بِٱلصَّبۡرِ"]],[102,"التكاثر",["أَلۡهَىٰكُمُ ٱلتَّكَاثُرُ","حَتَّىٰ زُرۡتُمُ ٱلۡمَقَابِرَ","كَلَّا سَوۡفَ تَعۡلَمُونَ","ثُمَّ كَلَّا سَوۡفَ تَعۡلَمُونَ","كَلَّا لَوۡ تَعۡلَمُونَ عِلۡمَ ٱلۡيَقِينِ","لَتَرَوُنَّ ٱلۡجَحِيمَ","ثُمَّ لَتَرَوُنَّهَا عَيۡنَ ٱلۡيَقِينِ","ثُمَّ لَتُسۡـَٔلُنَّ يَوۡمَئِذٍ عَنِ ٱلنَّعِيمِ"]],[101,"القارعة",["ٱلۡقَارِعَةُ","مَا ٱلۡقَارِعَةُ","وَمَآ أَدۡرَىٰكَ مَا ٱلۡقَارِعَةُ","يَوۡمَ يَكُونُ ٱلنَّاسُ كَٱلۡفَرَاشِ ٱلۡمَبۡثُوثِ","وَتَكُونُ ٱلۡجِبَالُ كَٱلۡعِهۡنِ ٱلۡمَنفُوشِ","فَأَمَّا مَن ثَقُلَتۡ مَوَٰزِينُهُۥ","فَهُوَ فِي عِيشَةٖ رَّاضِيَةٖ","وَأَمَّا مَنۡ خَفَّتۡ مَوَٰزِينُهُۥ","فَأُمُّهُۥ هَاوِيَةٞ","وَمَآ أَدۡرَىٰكَ مَا هِيَهۡ","نَارٌ حَامِيَةُۢ"]],[100,"العاديات",["وَٱلۡعَٰدِيَٰتِ ضَبۡحٗا","فَٱلۡمُورِيَٰتِ قَدۡحٗا","فَٱلۡمُغِيرَٰتِ صُبۡحٗا","فَأَثَرۡنَ بِهِۦ نَقۡعٗا","فَوَسَطۡنَ بِهِۦ جَمۡعًا","إِنَّ ٱلۡإِنسَٰنَ لِرَبِّهِۦ لَكَنُودٞ","وَإِنَّهُۥ عَلَىٰ ذَٰلِكَ لَشَهِيدٞ","وَإِنَّهُۥ لِحُبِّ ٱلۡخَيۡرِ لَشَدِيدٌ","۞أَفَلَا يَعۡلَمُ إِذَا بُعۡثِرَ مَا فِي ٱلۡقُبُورِ","وَحُصِّلَ مَا فِي ٱلصُّدُورِ","إِنَّ رَبَّهُم بِهِمۡ يَوۡمَئِذٖ لَّخَبِيرُۢ"]],[99,"الزلزلة",["إِذَا زُلۡزِلَتِ ٱلۡأَرۡضُ زِلۡزَالَهَا","وَأَخۡرَجَتِ ٱلۡأَرۡضُ أَثۡقَالَهَا","وَقَالَ ٱلۡإِنسَٰنُ مَا لَهَا","يَوۡمَئِذٖ تُحَدِّثُ أَخۡبَارَهَا","بِأَنَّ رَبَّكَ أَوۡحَىٰ لَهَا","يَوۡمَئِذٖ يَصۡدُرُ ٱلنَّاسُ أَشۡتَاتٗا لِّيُرَوۡاْ أَعۡمَٰلَهُمۡ","فَمَن يَعۡمَلۡ مِثۡقَالَ ذَرَّةٍ خَيۡرٗا يَرَهُۥ","وَمَن يَعۡمَلۡ مِثۡقَالَ ذَرَّةٖ شَرّٗا يَرَهُۥ"]],[98,"البينة",["لَمۡ يَكُنِ ٱلَّذِينَ كَفَرُواْ مِنۡ أَهۡلِ ٱلۡكِتَٰبِ وَٱلۡمُشۡرِكِينَ مُنفَكِّينَ حَتَّىٰ تَأۡتِيَهُمُ ٱلۡبَيِّنَةُ","رَسُولٞ مِّنَ ٱللَّهِ يَتۡلُواْ صُحُفٗا مُّطَهَّرَةٗ","فِيهَا كُتُبٞ قَيِّمَةٞ","وَمَا تَفَرَّقَ ٱلَّذِينَ أُوتُواْ ٱلۡكِتَٰبَ إِلَّا مِنۢ بَعۡدِ مَا جَآءَتۡهُمُ ٱلۡبَيِّنَةُ","وَمَآ أُمِرُوٓاْ إِلَّا لِيَعۡبُدُواْ ٱللَّهَ مُخۡلِصِينَ لَهُ ٱلدِّينَ حُنَفَآءَ وَيُقِيمُواْ ٱلصَّلَوٰةَ وَيُؤۡتُواْ ٱلزَّكَوٰةَۚ وَذَٰلِكَ دِينُ ٱلۡقَيِّمَةِ","إِنَّ ٱلَّذِينَ كَفَرُواْ مِنۡ أَهۡلِ ٱلۡكِتَٰبِ وَٱلۡمُشۡرِكِينَ فِي نَارِ جَهَنَّمَ خَٰلِدِينَ فِيهَآۚ أُوْلَـٰٓئِكَ هُمۡ شَرُّ ٱلۡبَرِيَّةِ","إِنَّ ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّـٰلِحَٰتِ أُوْلَـٰٓئِكَ هُمۡ خَيۡرُ ٱلۡبَرِيَّةِ","جَزَآؤُهُمۡ عِندَ رَبِّهِمۡ جَنَّـٰتُ عَدۡنٖ تَجۡرِي مِن تَحۡتِهَا ٱلۡأَنۡهَٰرُ خَٰلِدِينَ فِيهَآ أَبَدٗاۖ رَّضِيَ ٱللَّهُ عَنۡهُمۡ وَرَضُواْ عَنۡهُۚ ذَٰلِكَ لِمَنۡ خَشِيَ رَبَّهُۥ"]],[97,"القدر",["إِنَّآ أَنزَلۡنَٰهُ فِي لَيۡلَةِ ٱلۡقَدۡرِ","وَمَآ أَدۡرَىٰكَ مَا لَيۡلَةُ ٱلۡقَدۡرِ","لَيۡلَةُ ٱلۡقَدۡرِ خَيۡرٞ مِّنۡ أَلۡفِ شَهۡرٖ","تَنَزَّلُ ٱلۡمَلَـٰٓئِكَةُ وَٱلرُّوحُ فِيهَا بِإِذۡنِ رَبِّهِم مِّن كُلِّ أَمۡرٖ","سَلَٰمٌ هِيَ حَتَّىٰ مَطۡلَعِ ٱلۡفَجۡرِ"]],[96,"العلق",["ٱقۡرَأۡ بِٱسۡمِ رَبِّكَ ٱلَّذِي خَلَقَ","خَلَقَ ٱلۡإِنسَٰنَ مِنۡ عَلَقٍ","ٱقۡرَأۡ وَرَبُّكَ ٱلۡأَكۡرَمُ","ٱلَّذِي عَلَّمَ بِٱلۡقَلَمِ","عَلَّمَ ٱلۡإِنسَٰنَ مَا لَمۡ يَعۡلَمۡ","كَلَّآ إِنَّ ٱلۡإِنسَٰنَ لَيَطۡغَىٰٓ","أَن رَّءَاهُ ٱسۡتَغۡنَىٰٓ","إِنَّ إِلَىٰ رَبِّكَ ٱلرُّجۡعَىٰٓ","أَرَءَيۡتَ ٱلَّذِي يَنۡهَىٰ","عَبۡدًا إِذَا صَلَّىٰٓ","أَرَءَيۡتَ إِن كَانَ عَلَى ٱلۡهُدَىٰٓ","أَوۡ أَمَرَ بِٱلتَّقۡوَىٰٓ","أَرَءَيۡتَ إِن كَذَّبَ وَتَوَلَّىٰٓ","أَلَمۡ يَعۡلَم بِأَنَّ ٱللَّهَ يَرَىٰ","كَلَّا لَئِن لَّمۡ يَنتَهِ لَنَسۡفَعَۢا بِٱلنَّاصِيَةِ","نَاصِيَةٖ كَٰذِبَةٍ خَاطِئَةٖ","فَلۡيَدۡعُ نَادِيَهُۥ","سَنَدۡعُ ٱلزَّبَانِيَةَ","كَلَّا لَا تُطِعۡهُ وَٱسۡجُدۡۤ وَٱقۡتَرِب۩"]],[95,"التين",["وَٱلتِّينِ وَٱلزَّيۡتُونِ","وَطُورِ سِينِينَ","وَهَٰذَا ٱلۡبَلَدِ ٱلۡأَمِينِ","لَقَدۡ خَلَقۡنَا ٱلۡإِنسَٰنَ فِيٓ أَحۡسَنِ تَقۡوِيمٖ","ثُمَّ رَدَدۡنَٰهُ أَسۡفَلَ سَٰفِلِينَ","إِلَّا ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّـٰلِحَٰتِ فَلَهُمۡ أَجۡرٌ غَيۡرُ مَمۡنُونٖ","فَمَا يُكَذِّبُكَ بَعۡدُ بِٱلدِّينِ","أَلَيۡسَ ٱللَّهُ بِأَحۡكَمِ ٱلۡحَٰكِمِينَ"]],[94,"الشرح",["أَلَمۡ نَشۡرَحۡ لَكَ صَدۡرَكَ","وَوَضَعۡنَا عَنكَ وِزۡرَكَ","ٱلَّذِيٓ أَنقَضَ ظَهۡرَكَ","وَرَفَعۡنَا لَكَ ذِكۡرَكَ","فَإِنَّ مَعَ ٱلۡعُسۡرِ يُسۡرًا","إِنَّ مَعَ ٱلۡعُسۡرِ يُسۡرٗا","فَإِذَا فَرَغۡتَ فَٱنصَبۡ","وَإِلَىٰ رَبِّكَ فَٱرۡغَب"]],[93,"الضحى",["وَٱلضُّحَىٰ","وَٱلَّيۡلِ إِذَا سَجَىٰ","مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ","وَلَلۡأٓخِرَةُ خَيۡرٞ لَّكَ مِنَ ٱلۡأُولَىٰ","وَلَسَوۡفَ يُعۡطِيكَ رَبُّكَ فَتَرۡضَىٰٓ","أَلَمۡ يَجِدۡكَ يَتِيمٗا فَـَٔاوَىٰ","وَوَجَدَكَ ضَآلّٗا فَهَدَىٰ","وَوَجَدَكَ عَآئِلٗا فَأَغۡنَىٰ","فَأَمَّا ٱلۡيَتِيمَ فَلَا تَقۡهَرۡ","وَأَمَّا ٱلسَّآئِلَ فَلَا تَنۡهَرۡ","وَأَمَّا بِنِعۡمَةِ رَبِّكَ فَحَدِّثۡ"]],[92,"الليل",["وَٱلَّيۡلِ إِذَا يَغۡشَىٰ","وَٱلنَّهَارِ إِذَا تَجَلَّىٰ","وَمَا خَلَقَ ٱلذَّكَرَ وَٱلۡأُنثَىٰٓ","إِنَّ سَعۡيَكُمۡ لَشَتَّىٰ","فَأَمَّا مَنۡ أَعۡطَىٰ وَٱتَّقَىٰ","وَصَدَّقَ بِٱلۡحُسۡنَىٰ","فَسَنُيَسِّرُهُۥ لِلۡيُسۡرَىٰ","وَأَمَّا مَنۢ بَخِلَ وَٱسۡتَغۡنَىٰ","وَكَذَّبَ بِٱلۡحُسۡنَىٰ","فَسَنُيَسِّرُهُۥ لِلۡعُسۡرَىٰ","وَمَا يُغۡنِي عَنۡهُ مَالُهُۥٓ إِذَا تَرَدَّىٰٓ","إِنَّ عَلَيۡنَا لَلۡهُدَىٰ","وَإِنَّ لَنَا لَلۡأٓخِرَةَ وَٱلۡأُولَىٰ","فَأَنذَرۡتُكُمۡ نَارٗا تَلَظَّىٰ","لَا يَصۡلَىٰهَآ إِلَّا ٱلۡأَشۡقَى","ٱلَّذِي كَذَّبَ وَتَوَلَّىٰ","وَسَيُجَنَّبُهَا ٱلۡأَتۡقَى","ٱلَّذِي يُؤۡتِي مَالَهُۥ يَتَزَكَّىٰ","وَمَا لِأَحَدٍ عِندَهُۥ مِن نِّعۡمَةٖ تُجۡزَىٰٓ","إِلَّا ٱبۡتِغَآءَ وَجۡهِ رَبِّهِ ٱلۡأَعۡلَىٰ","وَلَسَوۡفَ يَرۡضَىٰ"]],[91,"الشمس",["وَٱلشَّمۡسِ وَضُحَىٰهَا","وَٱلۡقَمَرِ إِذَا تَلَىٰهَا","وَٱلنَّهَارِ إِذَا جَلَّىٰهَا","وَٱلَّيۡلِ إِذَا يَغۡشَىٰهَا","وَٱلسَّمَآءِ وَمَا بَنَىٰهَا","وَٱلۡأَرۡضِ وَمَا طَحَىٰهَا","وَنَفۡسٖ وَمَا سَوَّىٰهَا","فَأَلۡهَمَهَا فُجُورَهَا وَتَقۡوَىٰهَا","قَدۡ أَفۡلَحَ مَن زَكَّىٰهَا","وَقَدۡ خَابَ مَن دَسَّىٰهَا","كَذَّبَتۡ ثَمُودُ بِطَغۡوَىٰهَآ","إِذِ ٱنۢبَعَثَ أَشۡقَىٰهَا","فَقَالَ لَهُمۡ رَسُولُ ٱللَّهِ نَاقَةَ ٱللَّهِ وَسُقۡيَٰهَا","فَكَذَّبُوهُ فَعَقَرُوهَا فَدَمۡدَمَ عَلَيۡهِمۡ رَبُّهُم بِذَنۢبِهِمۡ فَسَوَّىٰهَا","وَلَا يَخَافُ عُقۡبَٰهَا"]],[90,"البلد",["لَآ أُقۡسِمُ بِهَٰذَا ٱلۡبَلَدِ","وَأَنتَ حِلُّۢ بِهَٰذَا ٱلۡبَلَدِ","وَوَالِدٖ وَمَا وَلَدَ","لَقَدۡ خَلَقۡنَا ٱلۡإِنسَٰنَ فِي كَبَدٍ","أَيَحۡسَبُ أَن لَّن يَقۡدِرَ عَلَيۡهِ أَحَدٞ","يَقُولُ أَهۡلَكۡتُ مَالٗا لُّبَدًا","أَيَحۡسَبُ أَن لَّمۡ يَرَهُۥٓ أَحَدٌ","أَلَمۡ نَجۡعَل لَّهُۥ عَيۡنَيۡنِ","وَلِسَانٗا وَشَفَتَيۡنِ","وَهَدَيۡنَٰهُ ٱلنَّجۡدَيۡنِ","فَلَا ٱقۡتَحَمَ ٱلۡعَقَبَةَ","وَمَآ أَدۡرَىٰكَ مَا ٱلۡعَقَبَةُ","فَكُّ رَقَبَةٍ","أَوۡ إِطۡعَٰمٞ فِي يَوۡمٖ ذِي مَسۡغَبَةٖ","يَتِيمٗا ذَا مَقۡرَبَةٍ","أَوۡ مِسۡكِينٗا ذَا مَتۡرَبَةٖ","ثُمَّ كَانَ مِنَ ٱلَّذِينَ ءَامَنُواْ وَتَوَاصَوۡاْ بِٱلصَّبۡرِ وَتَوَاصَوۡاْ بِٱلۡمَرۡحَمَةِ","أُوْلَـٰٓئِكَ أَصۡحَٰبُ ٱلۡمَيۡمَنَةِ","وَٱلَّذِينَ كَفَرُواْ بِـَٔايَٰتِنَا هُمۡ أَصۡحَٰبُ ٱلۡمَشۡـَٔمَةِ","عَلَيۡهِمۡ نَارٞ مُّؤۡصَدَةُۢ"]],[89,"الفجر",["وَٱلۡفَجۡرِ","وَلَيَالٍ عَشۡرٖ","وَٱلشَّفۡعِ وَٱلۡوَتۡرِ","وَٱلَّيۡلِ إِذَا يَسۡرِ","هَلۡ فِي ذَٰلِكَ قَسَمٞ لِّذِي حِجۡرٍ","أَلَمۡ تَرَ كَيۡفَ فَعَلَ رَبُّكَ بِعَادٍ","إِرَمَ ذَاتِ ٱلۡعِمَادِ","ٱلَّتِي لَمۡ يُخۡلَقۡ مِثۡلُهَا فِي ٱلۡبِلَٰدِ","وَثَمُودَ ٱلَّذِينَ جَابُواْ ٱلصَّخۡرَ بِٱلۡوَادِ","وَفِرۡعَوۡنَ ذِي ٱلۡأَوۡتَادِ","ٱلَّذِينَ طَغَوۡاْ فِي ٱلۡبِلَٰدِ","فَأَكۡثَرُواْ فِيهَا ٱلۡفَسَادَ","فَصَبَّ عَلَيۡهِمۡ رَبُّكَ سَوۡطَ عَذَابٍ","إِنَّ رَبَّكَ لَبِٱلۡمِرۡصَادِ","فَأَمَّا ٱلۡإِنسَٰنُ إِذَا مَا ٱبۡتَلَىٰهُ رَبُّهُۥ فَأَكۡرَمَهُۥ وَنَعَّمَهُۥ فَيَقُولُ رَبِّيٓ أَكۡرَمَنِ","وَأَمَّآ إِذَا مَا ٱبۡتَلَىٰهُ فَقَدَرَ عَلَيۡهِ رِزۡقَهُۥ فَيَقُولُ رَبِّيٓ أَهَٰنَنِ","كَلَّاۖ بَل لَّا تُكۡرِمُونَ ٱلۡيَتِيمَ","وَلَا تَحَـٰٓضُّونَ عَلَىٰ طَعَامِ ٱلۡمِسۡكِينِ","وَتَأۡكُلُونَ ٱلتُّرَاثَ أَكۡلٗا لَّمّٗا","وَتُحِبُّونَ ٱلۡمَالَ حُبّٗا جَمّٗا","كَلَّآۖ إِذَا دُكَّتِ ٱلۡأَرۡضُ دَكّٗا دَكّٗا","وَجَآءَ رَبُّكَ وَٱلۡمَلَكُ صَفّٗا صَفّٗا","وَجِاْيٓءَ يَوۡمَئِذِۭ بِجَهَنَّمَۚ يَوۡمَئِذٖ يَتَذَكَّرُ ٱلۡإِنسَٰنُ وَأَنَّىٰ لَهُ ٱلذِّكۡرَىٰ","يَقُولُ يَٰلَيۡتَنِي قَدَّمۡتُ لِحَيَاتِي","فَيَوۡمَئِذٖ لَّا يُعَذِّبُ عَذَابَهُۥٓ أَحَدٞ","وَلَا يُوثِقُ وَثَاقَهُۥٓ أَحَدٞ","يَـٰٓأَيَّتُهَا ٱلنَّفۡسُ ٱلۡمُطۡمَئِنَّةُ","ٱرۡجِعِيٓ إِلَىٰ رَبِّكِ رَاضِيَةٗ مَّرۡضِيَّةٗ","فَٱدۡخُلِي فِي عِبَٰدِي","وَٱدۡخُلِي جَنَّتِي"]],[88,"الغاشية",["هَلۡ أَتَىٰكَ حَدِيثُ ٱلۡغَٰشِيَةِ","وُجُوهٞ يَوۡمَئِذٍ خَٰشِعَةٌ","عَامِلَةٞ نَّاصِبَةٞ","تَصۡلَىٰ نَارًا حَامِيَةٗ","تُسۡقَىٰ مِنۡ عَيۡنٍ ءَانِيَةٖ","لَّيۡسَ لَهُمۡ طَعَامٌ إِلَّا مِن ضَرِيعٖ","لَّا يُسۡمِنُ وَلَا يُغۡنِي مِن جُوعٖ","وُجُوهٞ يَوۡمَئِذٖ نَّاعِمَةٞ","لِّسَعۡيِهَا رَاضِيَةٞ","فِي جَنَّةٍ عَالِيَةٖ","لَّا تَسۡمَعُ فِيهَا لَٰغِيَةٗ","فِيهَا عَيۡنٞ جَارِيَةٞ","فِيهَا سُرُرٞ مَّرۡفُوعَةٞ","وَأَكۡوَابٞ مَّوۡضُوعَةٞ","وَنَمَارِقُ مَصۡفُوفَةٞ","وَزَرَابِيُّ مَبۡثُوثَةٌ","أَفَلَا يَنظُرُونَ إِلَى ٱلۡإِبِلِ كَيۡفَ خُلِقَتۡ","وَإِلَى ٱلسَّمَآءِ كَيۡفَ رُفِعَتۡ","وَإِلَى ٱلۡجِبَالِ كَيۡفَ نُصِبَتۡ","وَإِلَى ٱلۡأَرۡضِ كَيۡفَ سُطِحَتۡ","فَذَكِّرۡ إِنَّمَآ أَنتَ مُذَكِّرٞ","لَّسۡتَ عَلَيۡهِم بِمُصَيۡطِرٍ","إِلَّا مَن تَوَلَّىٰ وَكَفَرَ","فَيُعَذِّبُهُ ٱللَّهُ ٱلۡعَذَابَ ٱلۡأَكۡبَرَ","إِنَّ إِلَيۡنَآ إِيَابَهُمۡ","ثُمَّ إِنَّ عَلَيۡنَا حِسَابَهُم"]],[87,"الأعلى",["سَبِّحِ ٱسۡمَ رَبِّكَ ٱلۡأَعۡلَى","ٱلَّذِي خَلَقَ فَسَوَّىٰ","وَٱلَّذِي قَدَّرَ فَهَدَىٰ","وَٱلَّذِيٓ أَخۡرَجَ ٱلۡمَرۡعَىٰ","فَجَعَلَهُۥ غُثَآءً أَحۡوَىٰ","سَنُقۡرِئُكَ فَلَا تَنسَىٰٓ","إِلَّا مَا شَآءَ ٱللَّهُۚ إِنَّهُۥ يَعۡلَمُ ٱلۡجَهۡرَ وَمَا يَخۡفَىٰ","وَنُيَسِّرُكَ لِلۡيُسۡرَىٰ","فَذَكِّرۡ إِن نَّفَعَتِ ٱلذِّكۡرَىٰ","سَيَذَّكَّرُ مَن يَخۡشَىٰ","وَيَتَجَنَّبُهَا ٱلۡأَشۡقَى","ٱلَّذِي يَصۡلَى ٱلنَّارَ ٱلۡكُبۡرَىٰ","ثُمَّ لَا يَمُوتُ فِيهَا وَلَا يَحۡيَىٰ","قَدۡ أَفۡلَحَ مَن تَزَكَّىٰ","وَذَكَرَ ٱسۡمَ رَبِّهِۦ فَصَلَّىٰ","بَلۡ تُؤۡثِرُونَ ٱلۡحَيَوٰةَ ٱلدُّنۡيَا","وَٱلۡأٓخِرَةُ خَيۡرٞ وَأَبۡقَىٰٓ","إِنَّ هَٰذَا لَفِي ٱلصُّحُفِ ٱلۡأُولَىٰ","صُحُفِ إِبۡرَٰهِيمَ وَمُوسَىٰ"]],[86,"الطارق",["وَٱلسَّمَآءِ وَٱلطَّارِقِ","وَمَآ أَدۡرَىٰكَ مَا ٱلطَّارِقُ","ٱلنَّجۡمُ ٱلثَّاقِبُ","إِن كُلُّ نَفۡسٖ لَّمَّا عَلَيۡهَا حَافِظٞ","فَلۡيَنظُرِ ٱلۡإِنسَٰنُ مِمَّ خُلِقَ","خُلِقَ مِن مَّآءٖ دَافِقٖ","يَخۡرُجُ مِنۢ بَيۡنِ ٱلصُّلۡبِ وَٱلتَّرَآئِبِ","إِنَّهُۥ عَلَىٰ رَجۡعِهِۦ لَقَادِرٞ","يَوۡمَ تُبۡلَى ٱلسَّرَآئِرُ","فَمَا لَهُۥ مِن قُوَّةٖ وَلَا نَاصِرٖ","وَٱلسَّمَآءِ ذَاتِ ٱلرَّجۡعِ","وَٱلۡأَرۡضِ ذَاتِ ٱلصَّدۡعِ","إِنَّهُۥ لَقَوۡلٞ فَصۡلٞ","وَمَا هُوَ بِٱلۡهَزۡلِ","إِنَّهُمۡ يَكِيدُونَ كَيۡدٗا","وَأَكِيدُ كَيۡدٗا","فَمَهِّلِ ٱلۡكَٰفِرِينَ أَمۡهِلۡهُمۡ رُوَيۡدَۢا"]],[85,"البروج",["وَٱلسَّمَآءِ ذَاتِ ٱلۡبُرُوجِ","وَٱلۡيَوۡمِ ٱلۡمَوۡعُودِ","وَشَاهِدٖ وَمَشۡهُودٖ","قُتِلَ أَصۡحَٰبُ ٱلۡأُخۡدُودِ","ٱلنَّارِ ذَاتِ ٱلۡوَقُودِ","إِذۡ هُمۡ عَلَيۡهَا قُعُودٞ","وَهُمۡ عَلَىٰ مَا يَفۡعَلُونَ بِٱلۡمُؤۡمِنِينَ شُهُودٞ","وَمَا نَقَمُواْ مِنۡهُمۡ إِلَّآ أَن يُؤۡمِنُواْ بِٱللَّهِ ٱلۡعَزِيزِ ٱلۡحَمِيدِ","ٱلَّذِي لَهُۥ مُلۡكُ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِۚ وَٱللَّهُ عَلَىٰ كُلِّ شَيۡءٖ شَهِيدٌ","إِنَّ ٱلَّذِينَ فَتَنُواْ ٱلۡمُؤۡمِنِينَ وَٱلۡمُؤۡمِنَٰتِ ثُمَّ لَمۡ يَتُوبُواْ فَلَهُمۡ عَذَابُ جَهَنَّمَ وَلَهُمۡ عَذَابُ ٱلۡحَرِيقِ","إِنَّ ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّـٰلِحَٰتِ لَهُمۡ جَنَّـٰتٞ تَجۡرِي مِن تَحۡتِهَا ٱلۡأَنۡهَٰرُۚ ذَٰلِكَ ٱلۡفَوۡزُ ٱلۡكَبِيرُ","إِنَّ بَطۡشَ رَبِّكَ لَشَدِيدٌ","إِنَّهُۥ هُوَ يُبۡدِئُ وَيُعِيدُ","وَهُوَ ٱلۡغَفُورُ ٱلۡوَدُودُ","ذُو ٱلۡعَرۡشِ ٱلۡمَجِيدُ","فَعَّالٞ لِّمَا يُرِيدُ","هَلۡ أَتَىٰكَ حَدِيثُ ٱلۡجُنُودِ","فِرۡعَوۡنَ وَثَمُودَ","بَلِ ٱلَّذِينَ كَفَرُواْ فِي تَكۡذِيبٖ","وَٱللَّهُ مِن وَرَآئِهِم مُّحِيطُۢ","بَلۡ هُوَ قُرۡءَانٞ مَّجِيدٞ","فِي لَوۡحٖ مَّحۡفُوظِۭ"]],[84,"الإنشقاق",["إِذَا ٱلسَّمَآءُ ٱنشَقَّتۡ","وَأَذِنَتۡ لِرَبِّهَا وَحُقَّتۡ","وَإِذَا ٱلۡأَرۡضُ مُدَّتۡ","وَأَلۡقَتۡ مَا فِيهَا وَتَخَلَّتۡ","وَأَذِنَتۡ لِرَبِّهَا وَحُقَّتۡ","يَـٰٓأَيُّهَا ٱلۡإِنسَٰنُ إِنَّكَ كَادِحٌ إِلَىٰ رَبِّكَ كَدۡحٗا فَمُلَٰقِيهِ","فَأَمَّا مَنۡ أُوتِيَ كِتَٰبَهُۥ بِيَمِينِهِۦ","فَسَوۡفَ يُحَاسَبُ حِسَابٗا يَسِيرٗا","وَيَنقَلِبُ إِلَىٰٓ أَهۡلِهِۦ مَسۡرُورٗا","وَأَمَّا مَنۡ أُوتِيَ كِتَٰبَهُۥ وَرَآءَ ظَهۡرِهِۦ","فَسَوۡفَ يَدۡعُواْ ثُبُورٗا","وَيَصۡلَىٰ سَعِيرًا","إِنَّهُۥ كَانَ فِيٓ أَهۡلِهِۦ مَسۡرُورًا","إِنَّهُۥ ظَنَّ أَن لَّن يَحُورَ","بَلَىٰٓۚ إِنَّ رَبَّهُۥ كَانَ بِهِۦ بَصِيرٗا","فَلَآ أُقۡسِمُ بِٱلشَّفَقِ","وَٱلَّيۡلِ وَمَا وَسَقَ","وَٱلۡقَمَرِ إِذَا ٱتَّسَقَ","لَتَرۡكَبُنَّ طَبَقًا عَن طَبَقٖ","فَمَا لَهُمۡ لَا يُؤۡمِنُونَ","وَإِذَا قُرِئَ عَلَيۡهِمُ ٱلۡقُرۡءَانُ لَا يَسۡجُدُونَۤ۩","بَلِ ٱلَّذِينَ كَفَرُواْ يُكَذِّبُونَ","وَٱللَّهُ أَعۡلَمُ بِمَا يُوعُونَ","فَبَشِّرۡهُم بِعَذَابٍ أَلِيمٍ","إِلَّا ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّـٰلِحَٰتِ لَهُمۡ أَجۡرٌ غَيۡرُ مَمۡنُونِۭ"]],[83,"المطففين",["وَيۡلٞ لِّلۡمُطَفِّفِينَ","ٱلَّذِينَ إِذَا ٱكۡتَالُواْ عَلَى ٱلنَّاسِ يَسۡتَوۡفُونَ","وَإِذَا كَالُوهُمۡ أَو وَّزَنُوهُمۡ يُخۡسِرُونَ","أَلَا يَظُنُّ أُوْلَـٰٓئِكَ أَنَّهُم مَّبۡعُوثُونَ","لِيَوۡمٍ عَظِيمٖ","يَوۡمَ يَقُومُ ٱلنَّاسُ لِرَبِّ ٱلۡعَٰلَمِينَ","كَلَّآ إِنَّ كِتَٰبَ ٱلۡفُجَّارِ لَفِي سِجِّينٖ","وَمَآ أَدۡرَىٰكَ مَا سِجِّينٞ","كِتَٰبٞ مَّرۡقُومٞ","وَيۡلٞ يَوۡمَئِذٖ لِّلۡمُكَذِّبِينَ","ٱلَّذِينَ يُكَذِّبُونَ بِيَوۡمِ ٱلدِّينِ","وَمَا يُكَذِّبُ بِهِۦٓ إِلَّا كُلُّ مُعۡتَدٍ أَثِيمٍ","إِذَا تُتۡلَىٰ عَلَيۡهِ ءَايَٰتُنَا قَالَ أَسَٰطِيرُ ٱلۡأَوَّلِينَ","كَلَّاۖ بَلۡۜ رَانَ عَلَىٰ قُلُوبِهِم مَّا كَانُواْ يَكۡسِبُونَ","كَلَّآ إِنَّهُمۡ عَن رَّبِّهِمۡ يَوۡمَئِذٖ لَّمَحۡجُوبُونَ","ثُمَّ إِنَّهُمۡ لَصَالُواْ ٱلۡجَحِيمِ","ثُمَّ يُقَالُ هَٰذَا ٱلَّذِي كُنتُم بِهِۦ تُكَذِّبُونَ","كَلَّآ إِنَّ كِتَٰبَ ٱلۡأَبۡرَارِ لَفِي عِلِّيِّينَ","وَمَآ أَدۡرَىٰكَ مَا عِلِّيُّونَ","كِتَٰبٞ مَّرۡقُومٞ","يَشۡهَدُهُ ٱلۡمُقَرَّبُونَ","إِنَّ ٱلۡأَبۡرَارَ لَفِي نَعِيمٍ","عَلَى ٱلۡأَرَآئِكِ يَنظُرُونَ","تَعۡرِفُ فِي وُجُوهِهِمۡ نَضۡرَةَ ٱلنَّعِيمِ","يُسۡقَوۡنَ مِن رَّحِيقٖ مَّخۡتُومٍ","خِتَٰمُهُۥ مِسۡكٞۚ وَفِي ذَٰلِكَ فَلۡيَتَنَافَسِ ٱلۡمُتَنَٰفِسُونَ","وَمِزَاجُهُۥ مِن تَسۡنِيمٍ","عَيۡنٗا يَشۡرَبُ بِهَا ٱلۡمُقَرَّبُونَ","إِنَّ ٱلَّذِينَ أَجۡرَمُواْ كَانُواْ مِنَ ٱلَّذِينَ ءَامَنُواْ يَضۡحَكُونَ","وَإِذَا مَرُّواْ بِهِمۡ يَتَغَامَزُونَ","وَإِذَا ٱنقَلَبُوٓاْ إِلَىٰٓ أَهۡلِهِمُ ٱنقَلَبُواْ فَكِهِينَ","وَإِذَا رَأَوۡهُمۡ قَالُوٓاْ إِنَّ هَـٰٓؤُلَآءِ لَضَآلُّونَ","وَمَآ أُرۡسِلُواْ عَلَيۡهِمۡ حَٰفِظِينَ","فَٱلۡيَوۡمَ ٱلَّذِينَ ءَامَنُواْ مِنَ ٱلۡكُفَّارِ يَضۡحَكُونَ","عَلَى ٱلۡأَرَآئِكِ يَنظُرُونَ","هَلۡ ثُوِّبَ ٱلۡكُفَّارُ مَا كَانُواْ يَفۡعَلُونَ"]],[82,"الإنفطار",["إِذَا ٱلسَّمَآءُ ٱنفَطَرَتۡ","وَإِذَا ٱلۡكَوَاكِبُ ٱنتَثَرَتۡ","وَإِذَا ٱلۡبِحَارُ فُجِّرَتۡ","وَإِذَا ٱلۡقُبُورُ بُعۡثِرَتۡ","عَلِمَتۡ نَفۡسٞ مَّا قَدَّمَتۡ وَأَخَّرَتۡ","يَـٰٓأَيُّهَا ٱلۡإِنسَٰنُ مَا غَرَّكَ بِرَبِّكَ ٱلۡكَرِيمِ","ٱلَّذِي خَلَقَكَ فَسَوَّىٰكَ فَعَدَلَكَ","فِيٓ أَيِّ صُورَةٖ مَّا شَآءَ رَكَّبَكَ","كَلَّا بَلۡ تُكَذِّبُونَ بِٱلدِّينِ","وَإِنَّ عَلَيۡكُمۡ لَحَٰفِظِينَ","كِرَامٗا كَٰتِبِينَ","يَعۡلَمُونَ مَا تَفۡعَلُونَ","إِنَّ ٱلۡأَبۡرَارَ لَفِي نَعِيمٖ","وَإِنَّ ٱلۡفُجَّارَ لَفِي جَحِيمٖ","يَصۡلَوۡنَهَا يَوۡمَ ٱلدِّينِ","وَمَا هُمۡ عَنۡهَا بِغَآئِبِينَ","وَمَآ أَدۡرَىٰكَ مَا يَوۡمُ ٱلدِّينِ","ثُمَّ مَآ أَدۡرَىٰكَ مَا يَوۡمُ ٱلدِّينِ","يَوۡمَ لَا تَمۡلِكُ نَفۡسٞ لِّنَفۡسٖ شَيۡـٔٗاۖ وَٱلۡأَمۡرُ يَوۡمَئِذٖ لِّلَّهِ"]],[81,"التكوير",["إِذَا ٱلشَّمۡسُ كُوِّرَتۡ","وَإِذَا ٱلنُّجُومُ ٱنكَدَرَتۡ","وَإِذَا ٱلۡجِبَالُ سُيِّرَتۡ","وَإِذَا ٱلۡعِشَارُ عُطِّلَتۡ","وَإِذَا ٱلۡوُحُوشُ حُشِرَتۡ","وَإِذَا ٱلۡبِحَارُ سُجِّرَتۡ","وَإِذَا ٱلنُّفُوسُ زُوِّجَتۡ","وَإِذَا ٱلۡمَوۡءُۥدَةُ سُئِلَتۡ","بِأَيِّ ذَنۢبٖ قُتِلَتۡ","وَإِذَا ٱلصُّحُفُ نُشِرَتۡ","وَإِذَا ٱلسَّمَآءُ كُشِطَتۡ","وَإِذَا ٱلۡجَحِيمُ سُعِّرَتۡ","وَإِذَا ٱلۡجَنَّةُ أُزۡلِفَتۡ","عَلِمَتۡ نَفۡسٞ مَّآ أَحۡضَرَتۡ","فَلَآ أُقۡسِمُ بِٱلۡخُنَّسِ","ٱلۡجَوَارِ ٱلۡكُنَّسِ","وَٱلَّيۡلِ إِذَا عَسۡعَسَ","وَٱلصُّبۡحِ إِذَا تَنَفَّسَ","إِنَّهُۥ لَقَوۡلُ رَسُولٖ كَرِيمٖ","ذِي قُوَّةٍ عِندَ ذِي ٱلۡعَرۡشِ مَكِينٖ","مُّطَاعٖ ثَمَّ أَمِينٖ","وَمَا صَاحِبُكُم بِمَجۡنُونٖ","وَلَقَدۡ رَءَاهُ بِٱلۡأُفُقِ ٱلۡمُبِينِ","وَمَا هُوَ عَلَى ٱلۡغَيۡبِ بِضَنِينٖ","وَمَا هُوَ بِقَوۡلِ شَيۡطَٰنٖ رَّجِيمٖ","فَأَيۡنَ تَذۡهَبُونَ","إِنۡ هُوَ إِلَّا ذِكۡرٞ لِّلۡعَٰلَمِينَ","لِمَن شَآءَ مِنكُمۡ أَن يَسۡتَقِيمَ","وَمَا تَشَآءُونَ إِلَّآ أَن يَشَآءَ ٱللَّهُ رَبُّ ٱلۡعَٰلَمِينَ"]],[80,"عبس",["عَبَسَ وَتَوَلَّىٰٓ","أَن جَآءَهُ ٱلۡأَعۡمَىٰ","وَمَا يُدۡرِيكَ لَعَلَّهُۥ يَزَّكَّىٰٓ","أَوۡ يَذَّكَّرُ فَتَنفَعَهُ ٱلذِّكۡرَىٰٓ","أَمَّا مَنِ ٱسۡتَغۡنَىٰ","فَأَنتَ لَهُۥ تَصَدَّىٰ","وَمَا عَلَيۡكَ أَلَّا يَزَّكَّىٰ","وَأَمَّا مَن جَآءَكَ يَسۡعَىٰ","وَهُوَ يَخۡشَىٰ","فَأَنتَ عَنۡهُ تَلَهَّىٰ","كَلَّآ إِنَّهَا تَذۡكِرَةٞ","فَمَن شَآءَ ذَكَرَهُۥ","فِي صُحُفٖ مُّكَرَّمَةٖ","مَّرۡفُوعَةٖ مُّطَهَّرَةِۭ","بِأَيۡدِي سَفَرَةٖ","كِرَامِۭ بَرَرَةٖ","قُتِلَ ٱلۡإِنسَٰنُ مَآ أَكۡفَرَهُۥ","مِنۡ أَيِّ شَيۡءٍ خَلَقَهُۥ","مِن نُّطۡفَةٍ خَلَقَهُۥ فَقَدَّرَهُۥ","ثُمَّ ٱلسَّبِيلَ يَسَّرَهُۥ","ثُمَّ أَمَاتَهُۥ فَأَقۡبَرَهُۥ","ثُمَّ إِذَا شَآءَ أَنشَرَهُۥ","كَلَّا لَمَّا يَقۡضِ مَآ أَمَرَهُۥ","فَلۡيَنظُرِ ٱلۡإِنسَٰنُ إِلَىٰ طَعَامِهِۦٓ","أَنَّا صَبَبۡنَا ٱلۡمَآءَ صَبّٗا","ثُمَّ شَقَقۡنَا ٱلۡأَرۡضَ شَقّٗا","فَأَنۢبَتۡنَا فِيهَا حَبّٗا","وَعِنَبٗا وَقَضۡبٗا","وَزَيۡتُونٗا وَنَخۡلٗا","وَحَدَآئِقَ غُلۡبٗا","وَفَٰكِهَةٗ وَأَبّٗا","مَّتَٰعٗا لَّكُمۡ وَلِأَنۡعَٰمِكُمۡ","فَإِذَا جَآءَتِ ٱلصَّآخَّةُ","يَوۡمَ يَفِرُّ ٱلۡمَرۡءُ مِنۡ أَخِيهِ","وَأُمِّهِۦ وَأَبِيهِ","وَصَٰحِبَتِهِۦ وَبَنِيهِ","لِكُلِّ ٱمۡرِيٕٖ مِّنۡهُمۡ يَوۡمَئِذٖ شَأۡنٞ يُغۡنِيهِ","وُجُوهٞ يَوۡمَئِذٖ مُّسۡفِرَةٞ","ضَاحِكَةٞ مُّسۡتَبۡشِرَةٞ","وَوُجُوهٞ يَوۡمَئِذٍ عَلَيۡهَا غَبَرَةٞ","تَرۡهَقُهَا قَتَرَةٌ","أُوْلَـٰٓئِكَ هُمُ ٱلۡكَفَرَةُ ٱلۡفَجَرَةُ"]],[79,"النازعات",["وَٱلنَّـٰزِعَٰتِ غَرۡقٗا","وَٱلنَّـٰشِطَٰتِ نَشۡطٗا","وَٱلسَّـٰبِحَٰتِ سَبۡحٗا","فَٱلسَّـٰبِقَٰتِ سَبۡقٗا","فَٱلۡمُدَبِّرَٰتِ أَمۡرٗا","يَوۡمَ تَرۡجُفُ ٱلرَّاجِفَةُ","تَتۡبَعُهَا ٱلرَّادِفَةُ","قُلُوبٞ يَوۡمَئِذٖ وَاجِفَةٌ","أَبۡصَٰرُهَا خَٰشِعَةٞ","يَقُولُونَ أَءِنَّا لَمَرۡدُودُونَ فِي ٱلۡحَافِرَةِ","أَءِذَا كُنَّا عِظَٰمٗا نَّخِرَةٗ","قَالُواْ تِلۡكَ إِذٗا كَرَّةٌ خَاسِرَةٞ","فَإِنَّمَا هِيَ زَجۡرَةٞ وَٰحِدَةٞ","فَإِذَا هُم بِٱلسَّاهِرَةِ","هَلۡ أَتَىٰكَ حَدِيثُ مُوسَىٰٓ","إِذۡ نَادَىٰهُ رَبُّهُۥ بِٱلۡوَادِ ٱلۡمُقَدَّسِ طُوًى","ٱذۡهَبۡ إِلَىٰ فِرۡعَوۡنَ إِنَّهُۥ طَغَىٰ","فَقُلۡ هَل لَّكَ إِلَىٰٓ أَن تَزَكَّىٰ","وَأَهۡدِيَكَ إِلَىٰ رَبِّكَ فَتَخۡشَىٰ","فَأَرَىٰهُ ٱلۡأٓيَةَ ٱلۡكُبۡرَىٰ","فَكَذَّبَ وَعَصَىٰ","ثُمَّ أَدۡبَرَ يَسۡعَىٰ","فَحَشَرَ فَنَادَىٰ","فَقَالَ أَنَا۠ رَبُّكُمُ ٱلۡأَعۡلَىٰ","فَأَخَذَهُ ٱللَّهُ نَكَالَ ٱلۡأٓخِرَةِ وَٱلۡأُولَىٰٓ","إِنَّ فِي ذَٰلِكَ لَعِبۡرَةٗ لِّمَن يَخۡشَىٰٓ","ءَأَنتُمۡ أَشَدُّ خَلۡقًا أَمِ ٱلسَّمَآءُۚ بَنَىٰهَا","رَفَعَ سَمۡكَهَا فَسَوَّىٰهَا","وَأَغۡطَشَ لَيۡلَهَا وَأَخۡرَجَ ضُحَىٰهَا","وَٱلۡأَرۡضَ بَعۡدَ ذَٰلِكَ دَحَىٰهَآ","أَخۡرَجَ مِنۡهَا مَآءَهَا وَمَرۡعَىٰهَا","وَٱلۡجِبَالَ أَرۡسَىٰهَا","مَتَٰعٗا لَّكُمۡ وَلِأَنۡعَٰمِكُمۡ","فَإِذَا جَآءَتِ ٱلطَّآمَّةُ ٱلۡكُبۡرَىٰ","يَوۡمَ يَتَذَكَّرُ ٱلۡإِنسَٰنُ مَا سَعَىٰ","وَبُرِّزَتِ ٱلۡجَحِيمُ لِمَن يَرَىٰ","فَأَمَّا مَن طَغَىٰ","وَءَاثَرَ ٱلۡحَيَوٰةَ ٱلدُّنۡيَا","فَإِنَّ ٱلۡجَحِيمَ هِيَ ٱلۡمَأۡوَىٰ","وَأَمَّا مَنۡ خَافَ مَقَامَ رَبِّهِۦ وَنَهَى ٱلنَّفۡسَ عَنِ ٱلۡهَوَىٰ","فَإِنَّ ٱلۡجَنَّةَ هِيَ ٱلۡمَأۡوَىٰ","يَسۡـَٔلُونَكَ عَنِ ٱلسَّاعَةِ أَيَّانَ مُرۡسَىٰهَا","فِيمَ أَنتَ مِن ذِكۡرَىٰهَآ","إِلَىٰ رَبِّكَ مُنتَهَىٰهَآ","إِنَّمَآ أَنتَ مُنذِرُ مَن يَخۡشَىٰهَا","كَأَنَّهُمۡ يَوۡمَ يَرَوۡنَهَا لَمۡ يَلۡبَثُوٓاْ إِلَّا عَشِيَّةً أَوۡ ضُحَىٰهَا"]],[78,"النبإ",["عَمَّ يَتَسَآءَلُونَ","عَنِ ٱلنَّبَإِ ٱلۡعَظِيمِ","ٱلَّذِي هُمۡ فِيهِ مُخۡتَلِفُونَ","كَلَّا سَيَعۡلَمُونَ","ثُمَّ كَلَّا سَيَعۡلَمُونَ","أَلَمۡ نَجۡعَلِ ٱلۡأَرۡضَ مِهَٰدٗا","وَٱلۡجِبَالَ أَوۡتَادٗا","وَخَلَقۡنَٰكُمۡ أَزۡوَٰجٗا","وَجَعَلۡنَا نَوۡمَكُمۡ سُبَاتٗا","وَجَعَلۡنَا ٱلَّيۡلَ لِبَاسٗا","وَجَعَلۡنَا ٱلنَّهَارَ مَعَاشٗا","وَبَنَيۡنَا فَوۡقَكُمۡ سَبۡعٗا شِدَادٗا","وَجَعَلۡنَا سِرَاجٗا وَهَّاجٗا","وَأَنزَلۡنَا مِنَ ٱلۡمُعۡصِرَٰتِ مَآءٗ ثَجَّاجٗا","لِّنُخۡرِجَ بِهِۦ حَبّٗا وَنَبَاتٗا","وَجَنَّـٰتٍ أَلۡفَافًا","إِنَّ يَوۡمَ ٱلۡفَصۡلِ كَانَ مِيقَٰتٗا","يَوۡمَ يُنفَخُ فِي ٱلصُّورِ فَتَأۡتُونَ أَفۡوَاجٗا","وَفُتِحَتِ ٱلسَّمَآءُ فَكَانَتۡ أَبۡوَٰبٗا","وَسُيِّرَتِ ٱلۡجِبَالُ فَكَانَتۡ سَرَابًا","إِنَّ جَهَنَّمَ كَانَتۡ مِرۡصَادٗا","لِّلطَّـٰغِينَ مَـَٔابٗا","لَّـٰبِثِينَ فِيهَآ أَحۡقَابٗا","لَّا يَذُوقُونَ فِيهَا بَرۡدٗا وَلَا شَرَابًا","إِلَّا حَمِيمٗا وَغَسَّاقٗا","جَزَآءٗ وِفَاقًا","إِنَّهُمۡ كَانُواْ لَا يَرۡجُونَ حِسَابٗا","وَكَذَّبُواْ بِـَٔايَٰتِنَا كِذَّابٗا","وَكُلَّ شَيۡءٍ أَحۡصَيۡنَٰهُ كِتَٰبٗا","فَذُوقُواْ فَلَن نَّزِيدَكُمۡ إِلَّا عَذَابًا","إِنَّ لِلۡمُتَّقِينَ مَفَازًا","حَدَآئِقَ وَأَعۡنَٰبٗا","وَكَوَاعِبَ أَتۡرَابٗا","وَكَأۡسٗا دِهَاقٗا","لَّا يَسۡمَعُونَ فِيهَا لَغۡوٗا وَلَا كِذَّـٰبٗا","جَزَآءٗ مِّن رَّبِّكَ عَطَآءً حِسَابٗا","رَّبِّ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِ وَمَا بَيۡنَهُمَا ٱلرَّحۡمَٰنِۖ لَا يَمۡلِكُونَ مِنۡهُ خِطَابٗا","يَوۡمَ يَقُومُ ٱلرُّوحُ وَٱلۡمَلَـٰٓئِكَةُ صَفّٗاۖ لَّا يَتَكَلَّمُونَ إِلَّا مَنۡ أَذِنَ لَهُ ٱلرَّحۡمَٰنُ وَقَالَ صَوَابٗا","ذَٰلِكَ ٱلۡيَوۡمُ ٱلۡحَقُّۖ فَمَن شَآءَ ٱتَّخَذَ إِلَىٰ رَبِّهِۦ مَـَٔابًا","إِنَّآ أَنذَرۡنَٰكُمۡ عَذَابٗا قَرِيبٗا يَوۡمَ يَنظُرُ ٱلۡمَرۡءُ مَا قَدَّمَتۡ يَدَاهُ وَيَقُولُ ٱلۡكَافِرُ يَٰلَيۡتَنِي كُنتُ تُرَٰبَۢا"]]];
+const idb=(()=>{let p;const open=()=>p||(p=new Promise((res,rej)=>{try{const r=indexedDB.open('malik-audio',1);r.onupgradeneeded=()=>r.result.createObjectStore('a');
+    r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)}catch(e){rej(e)}}));
+  const req=(mode,fn)=>open().then(d=>new Promise((res,rej)=>{const t=d.transaction('a',mode);const q=fn(t.objectStore('a'));
+    t.oncomplete=()=>res(q&&q.result);t.onerror=()=>rej(t.error)}));
+  return{get:k=>req('readonly',s=>s.get(k)).catch(()=>null),set:(k,v)=>req('readwrite',s=>s.put(v,k)),keys:()=>req('readonly',s=>s.getAllKeys()).catch(()=>[])}})();
+let recKeys=new Set();idb.keys().then(k=>{recKeys=new Set(k||[])});
+let qs=store.get('malik-quran',{});
+const qget=n=>{if(!qs[n])qs[n]={a:[],done:null,lvl:0,due:null};return qs[n]};
+const qsave=()=>store.set('malik-quran',qs);
+const IVL=[1,3,7,14,30];
+const addDays=n=>{const d=new Date();d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)};
+const arNum=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
+const isDue=s=>!!(s.done&&s.due&&s.due<=today());
+function qHome(){const done=QURAN.filter(s=>qget(s[0]).done).length,due=QURAN.filter(s=>isDue(qget(s[0]))).length;
+  $('#qSmall').textContent=`حفظت ${done} من ${QURAN.length} سورة`;const c=$('#quranCard');c.querySelector('.acc')?.remove();
+  if(due)c.insertAdjacentHTML('beforeend',`<span class="acc">مراجعة اليوم: ${due}</span>`);}
+$('#quranCard').onclick=()=>{show('quran');say('أيّ سورة نحفظ اليوم؟')};
+function renderSurahs(){$('#surahs').innerHTML=QURAN.map(([n,name,ay])=>{const s=qget(n),k=s.a.filter(Boolean).length;
+  const st=s.done?(isDue(s)?'<span class="due">مراجعة</span>':'⭐'):(k?'📖':'');
+  return`<button class="sura" data-s="${n}"><span class="no">${arNum(n)}</span><span class="nm"><b>${name}</b><span class="beads">${ay.map((_,i)=>`<i class="${s.a[i]?'on':''}"></i>`).join('')}</span></span><span class="st">${st}</span></button>`}).join('')}
+$('#surahs').addEventListener('click',e=>{const b=e.target.closest('[data-s]');if(b)openSurah(+b.dataset.s)});
+
+const S={n:1,i:0,listens:0,all:false};
+const sur=()=>QURAN.find(x=>x[0]===S.n);
+function openSurah(n){S.n=n;const s=qget(n),ay=sur()[2];const first=ay.findIndex((_,i)=>!s.a[i]);
+  S.i=first<0?0:first;S.listens=0;S.all=!!s.done||first<0;show('surah');renderSurah();
+  if(isDue(s))say('وقت المراجعة! سمّع السورة كاملة');
+  else if(s.done)say('حفظت هذه السورة، ما شاء الله');
+  else if(first<0)say('حفظت كل الآيات، الآن سمّع السورة كاملة');
+  else say('استمع للآية ثلاث مرات، ثم ردّدها');}
+function renderSurah(){const[n,name,ay]=sur(),s=qget(n);
+  $('#sname').textContent='سورة '+name;
+  $('#sbeads').innerHTML=ay.map((_,i)=>`<i data-i="${i}" class="${s.a[i]?'on':''} ${i===S.i&&!S.all?'cur':''}"></i>`).join('');
+  $('#basm').hidden=n===1;
+  const mk=(t,i)=>`${t}<span class="an">﴿${arNum(i+1)}﴾</span>`;
+  const A=$('#ayah');A.className='ayah'+(S.all?' all':'');
+  A.innerHTML=S.all?ay.map((t,i)=>`<span>${mk(t,i)}</span> `).join(''):`<span>${mk(ay[S.i],S.i)}</span>`;
+  $$('#listen span').forEach((x,i)=>x.classList.toggle('on',i<S.listens));$('#listen').style.visibility=S.all?'hidden':'visible';
+  $('#aPrev').disabled=S.all||S.i===0;$('#aNext').disabled=S.all||S.i===ay.length-1;
+  $('#sLink').href='https://quran.com/'+n;
+  $('#aAll').textContent=S.all?'📖 آية آية':'📜 السورة كاملة';
+  $('#aRec').hidden=S.all;$('#aRec').textContent=recKeys.has(`s${n}a${S.i+1}`)?'🎙 أعد تسجيل هذه الآية':'🎙 سجّل صوت هذه الآية';
+  $('#sRec').textContent=recKeys.has('s'+n)?'🎙 أعد تسجيل السورة كاملة':'🎙 تلاوة السورة كاملة';
+  $('#rWeak').hidden=!s.done;}
+$('#sbeads').addEventListener('click',e=>{const i=e.target.dataset.i;if(i==null)return;stopAll();S.i=+i;S.all=false;S.listens=0;renderSurah()});
+$('#aPrev').onclick=()=>{stopAll();if(S.i>0){S.i--;S.listens=0;renderSurah()}};
+$('#aNext').onclick=()=>{stopAll();if(S.i<sur()[2].length-1){S.i++;S.listens=0;renderSurah()}};
+$('#aAll').onclick=()=>{stopAll();S.all=!S.all;S.listens=0;renderSurah()};
+function afterListen(){if(S.all)return;S.listens=Math.min(3,S.listens+1);renderSurah();
+  if(S.listens===3)say(S.i>0?'الآن ردّدها، ثم اقرأ من أول السورة حتى هذه الآية':'الآن ردّدها مع بابا، ثم وحدك')}
+$('#aPlay').onclick=async()=>{stopAll();const key=S.all?'s'+S.n:`s${S.n}a${S.i+1}`;const blob=recKeys.has(key)?await idb.get(key):null;
+  if(blob){player=new Audio(URL.createObjectURL(blob));const o=owl();o&&o.classList.add('talk');
+    player.onended=()=>{o&&o.classList.remove('talk');afterListen()};player.play().catch(()=>{o&&o.classList.remove('talk')});}
+  else{const b=bub();b.textContent=S.all?'اقرأ السورة لمالك بصوتك، أو سجّلها من الزر في الأسفل':'اقرأ الآية لمالك بصوتك 📖';b.classList.remove('big');afterListen()}};
+$('#aOk').onclick=()=>{stopAll();const[n,name,ay]=sur(),s=qget(n);
+  if(s.done){s.lvl=Math.min(s.lvl+1,IVL.length-1);s.due=addDays(IVL[s.lvl]);qsave();confetti();addStar();renderSurah();
+    say(`أحسنت! نراجعها بعد ${IVL[s.lvl]} ${IVL[s.lvl]===1?'يوم':IVL[s.lvl]<=10?'أيام':'يوماً'}`);return}
+  if(S.all&&ay.every((_,i)=>s.a[i])){s.done=today();s.lvl=0;s.due=addDays(1);qsave();confetti();addStar();later(addStar,500);later(addStar,1000);renderSurah();
+    say(`ما شاء الله! حفظت سورة ${name}`);return}
+  if(S.all){S.all=false;renderSurah();say('اختر آية من النقاط في الأعلى');return}
+  s.a[S.i]=1;qsave();confetti();addStar();
+  const next=ay.findIndex((_,i)=>!s.a[i]);
+  if(next<0){S.all=true;renderSurah();say('حفظت كل الآيات! الآن سمّع السورة كاملة، ثم اضغط الزر الأخضر');return}
+  S.i=next;S.listens=0;renderSurah();say('أحسنت! هيا للآية التالية');};
+const weakBtn=document.createElement('button');weakBtn.id='rWeak';weakBtn.textContent='↩ تحتاج تثبيت';weakBtn.hidden=true;$('.pstrip').appendChild(weakBtn);
+weakBtn.onclick=()=>{const s=qget(S.n);s.lvl=0;s.due=addDays(1);qsave();say('لا بأس، نراجعها غداً');};
+let recTarget=null;
+$('#aRec').onclick=()=>{recTarget=`s${S.n}a${S.i+1}`;$('#recIn').value='';$('#recIn').click()};
+$('#sRec').onclick=()=>{recTarget='s'+S.n;$('#recIn').value='';$('#recIn').click()};
+$('#recIn').onchange=async e=>{const f=e.target.files&&e.target.files[0];if(!f||!recTarget)return;
+  try{await idb.set(recTarget,f);recKeys.add(recTarget);renderSurah();const b=bub();b.textContent='تم حفظ التسجيل ✅ اضغط 🔊 للاستماع';b.classList.remove('big')}
+  catch(err){const b=bub();b.textContent='تعذّر حفظ التسجيل على هذا المتصفح';b.classList.remove('big')}};
+
+/* ---------- قفل الوالد ---------- */
+let holdT=null;const lock=$('#lock');
+const holdStart=e=>{e.preventDefault();lock.classList.add('hold');holdT=setTimeout(()=>{lock.classList.remove('hold');show('parent')},2000)};
+const holdEnd=()=>{clearTimeout(holdT);lock.classList.remove('hold')};
+lock.addEventListener('pointerdown',holdStart);['pointerup','pointerleave','pointercancel'].forEach(ev=>lock.addEventListener(ev,holdEnd));
+lock.addEventListener('contextmenu',e=>e.preventDefault());
+lock.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.repeat===false){show('parent')}});
+$('#pexit').onclick=()=>show('home');
+$('#ptabs').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$$('#ptabs button').forEach(x=>x.classList.toggle('on',x===b));
+  $$('.pview').forEach(v=>v.hidden=v.id!=='p-'+b.dataset.p)});
+
+/* ---------- منطقة الوالد ---------- */
+const FIELDS=[['dig','أرقام'],['wrd','كلمات'],['stp','تعليمات'],['spa','مكان'],['foc','تركيز']];
+function renderParent(){
+  const g=store.get('malik-games',{days:[],best:{}}),names=['أحد','اثنين','ثلاثاء','أربعاء','خميس','جمعة','سبت'];let h='';
+  for(let i=6;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);h+=`<div><i class="${g.days.includes(d.toISOString().slice(0,10))?'done':''}"></i>${names[d.getDay()]}</div>`}
+  $('#week7').innerHTML=h;const r=rounds();$('#todayN').textContent=`جولات اليوم: ${r.n} من ${limit()+r.extra} · النجوم: ${stars}`;
+  $('#lvls').innerHTML=`تذكّر الصور: ${g1.lvl} صور · أين أضعها؟: مستوى ${g2.lvl} من 3 · اسمع القطة: مستوى ${g3.lvl} من 4`;
+  const log=store.get('malik-assess',[]);
+  if(!log.length)$('#alog').innerHTML='<div class="pc note" style="text-align:center">لا توجد قياسات بعد. سجّل قياس الأساس هذا الأسبوع.</div>';
+  else{const base=log[0];const cell=(r,k)=>{const v=r[k];if(v==null)return'<td class="num">—</td>';if(r===base||base[k]==null)return`<td class="num">${v}</td>`;
+      const d=v-base[k];return`<td class="num">${v} <span class="${d>0?'up':d<0?'dn':''}">${d>0?'+'+d:d<0?d:''}</span></td>`};
+    $('#alog').innerHTML=`<div class="tbl"><table><thead><tr><th>التاريخ</th>${FIELDS.map(f=>`<th class="num">${f[1]}</th>`).join('')}<th></th></tr></thead><tbody>
+      ${[...log].reverse().map(r=>`<tr><td class="num">${r.d}${r===base?'<br><span class="note">الأساس</span>':''}</td>${FIELDS.map(([k])=>cell(r,k)).join('')}<td><button class="pbtn ghost" style="padding:2px 8px;font-size:.75rem" data-del="${r.d}">حذف</button></td></tr>`).join('')}</tbody></table></div>`}
+  $('#vstatus').textContent=!hasTTS?'الجهاز لا يدعم النطق، استخدم «أنا أقرأ».':arVoice?'يوجد صوت عربي في هذا الجهاز.':'لا يوجد صوت عربي في هذا الجهاز، يُفضَّل «أنا أقرأ».';
+  $('#vmode').value=mode||'parent';$('#limit').value=String(limit());
+  const rows=Object.values(ACT).filter(a=>stat.acts[a.id]).map(a=>{const s=stat.acts[a.id];return`<tr><td>${a.subj.t}</td><td>${a.t}</td><td class="num">${s.t}</td><td class="num">${pct(a.id)}%</td></tr>`}).join('');
+  $('#studyLog').innerHTML=rows?`<div class="tbl"><table><thead><tr><th>المادة</th><th>النشاط</th><th class="num">أسئلة</th><th class="num">صحيح</th></tr></thead><tbody>${rows}</tbody></table></div>`:'<p class="note">لم يذاكر بعد.</p>';
+  const lab={ar:'حرف',en:'Letter',sw:'Word',cnt:'عدّ',num:'رقم',add:'جمع حتى',shp:'شكل',more:'أكثر/أقل'};
+  const weak=Object.entries(stat.miss).sort((a,b)=>b[1]-a[1]).slice(0,8).map(([k,v])=>{const[p,x]=k.split(':');return`${lab[p]||p} ${x||''} (${v})`});
+  $('#weak').textContent=weak.length?weak.join(' · '):'لا شيء حتى الآن.';
+  const c=curr();
+  $('#chAr').innerHTML=AR.map(x=>`<button data-ch="ar" data-l="${x[0]}" class="${c.ar.includes(x[0])?'on':''}">${x[0]}</button>`).join('');
+  $('#chEn').innerHTML=ENL.map(x=>`<button data-ch="en" data-l="${x}" class="${c.en.includes(x)?'on':''}">${x}</button>`).join('');
+  $('#curNum').value=String(c.num);$('#slimit').value=String(store.get('malik-slimit',6));
+  const sd=QURAN.filter(s=>qget(s[0]).done),ayN=QURAN.reduce((a,s)=>a+qget(s[0]).a.filter(Boolean).length,0),tot=QURAN.reduce((a,s)=>a+s[2].length,0);
+  $('#qStat').textContent=`سور محفوظة: ${sd.length} من ${QURAN.length} · آيات محفوظة: ${ayN} من ${tot}`;
+  const due=QURAN.filter(s=>isDue(qget(s[0]))).map(s=>s[1]);
+  $('#qDue').textContent=due.length?'مراجعة اليوم: '+due.join('، '):'لا توجد مراجعة مستحقة اليوم.';
+  $('#recCount').textContent=`التسجيلات المحفوظة على هذا الهاتف: ${recKeys.size}`;}
+function setCur(fn){const c=curr();fn(c);store.set('malik-cur',c);renderParent()}
+$('#p-cur').addEventListener('click',e=>{const t=e.target;
+  if(t.dataset.ch)setCur(c=>{const a=c[t.dataset.ch],l=t.dataset.l;const i=a.indexOf(l);i>=0?a.splice(i,1):a.push(l)});
+  if(t.dataset.all)setCur(c=>{c[t.dataset.all]=t.dataset.all==='ar'?AR.map(x=>x[0]):[...ENL]});
+  if(t.dataset.none)setCur(c=>{c[t.dataset.none]=[]});});
+$('#curNum').onchange=e=>setCur(c=>{c.num=+e.target.value});
+$('#slimit').onchange=e=>{store.set('malik-slimit',+e.target.value);renderParent()};
+$('#a-d').value=today();
+$('#aform').addEventListener('submit',e=>{e.preventDefault();const rec={d:$('#a-d').value};FIELDS.forEach(([k])=>{const v=$('#a-'+k).value;rec[k]=v===''?null:+v});
+  const log=store.get('malik-assess',[]).filter(x=>x.d!==rec.d);log.push(rec);log.sort((a,b)=>a.d.localeCompare(b.d));store.set('malik-assess',log);
+  FIELDS.forEach(([k])=>$('#a-'+k).value='');renderParent()});
+$('#alog').addEventListener('click',e=>{const d=e.target.dataset.del;if(!d)return;
+  if(e.target.dataset.sure){store.set('malik-assess',store.get('malik-assess',[]).filter(x=>x.d!==d));renderParent()}else{e.target.dataset.sure='1';e.target.textContent='تأكيد'}});
+$('#vmode').onchange=e=>{mode=e.target.value;store.set('malik-vmode',mode)};
+$('#limit').onchange=e=>{store.set('malik-limit',+e.target.value);renderParent()};
+$('#more').onclick=()=>{const r=rounds();r.extra+=5;store.set('malik-rounds',r);const s=srounds();s.extra+=2;store.set('malik-srounds',s);renderParent()};
+$('#fs').onclick=()=>{const el=document.documentElement;(el.requestFullscreen?el.requestFullscreen():Promise.reject()).catch(()=>{$('#fs').textContent='غير متاح هنا، استخدم «إضافة إلى الشاشة الرئيسية»'})};
+$('#reset').onclick=e=>{if(!e.target.dataset.sure){e.target.dataset.sure='1';e.target.textContent='اضغط مرة أخرى للتأكيد';return}
+  g1.lvl=2;g2.lvl=1;g3.lvl=1;['malik-g1','malik-g2','malik-g3'].forEach((k,i)=>store.set(k,[2,1,1][i]));e.target.textContent='تمت إعادة الضبط';delete e.target.dataset.sure;renderParent()};
+
+show('start');
+})();
+</script>
+
+</body></html>

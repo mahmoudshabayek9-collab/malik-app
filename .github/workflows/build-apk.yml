@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v5
 
@@ -19,29 +19,17 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - uses: android-actions/setup-android@v3
-
-      - uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '8.9'
-
       - name: Build signed APK
         shell: bash
         run: |
           set -o pipefail
-          gradle assembleRelease --no-daemon --stacktrace 2>&1 | tee build.log
-
-      - name: Save build log on failure
-        if: failure()
-        shell: bash
-        run: |
-          git config user.name "build-bot"; git config user.email "build-bot@users.noreply.github.com"
-          tail -n 300 build.log > last-build.log || echo "no log" > last-build.log
-          git checkout --orphan build-logs
-          git rm -rq --cached . || true
-          git add last-build.log
-          git commit -m "build log ${{ github.run_number }}"
-          git push -f origin build-logs
+          {
+            echo "ANDROID_HOME=$ANDROID_HOME ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT"
+            ls "$ANDROID_HOME/platforms" "$ANDROID_HOME/build-tools" 2>&1 | tail -n 20
+            echo "sdk.dir=$ANDROID_HOME" > local.properties
+            chmod +x gradlew
+            ./gradlew assembleRelease --no-daemon --stacktrace
+          } 2>&1 | tee build.log
 
       - name: Rename
         run: cp app/build/outputs/apk/release/app-release.apk malik.apk
@@ -51,9 +39,22 @@ jobs:
           name: malik-apk
           path: malik.apk
 
-      - name: Publish release (رابط تنزيل مباشر للهاتف)
+      - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.${{ github.run_number }}
-          name: برنامج مالك ${{ github.run_number }}
+          name: Malik ${{ github.run_number }}
           files: malik.apk
+
+      - name: Save build log on failure
+        if: failure()
+        shell: bash
+        run: |
+          git config user.name "build-bot"; git config user.email "build-bot@users.noreply.github.com"
+          { echo "run ${{ github.run_number }}"; tail -n 300 build.log 2>/dev/null || echo "build step did not run"; } > /tmp/last-build.log
+          git checkout --orphan build-logs
+          git rm -rq --cached . || true
+          cp /tmp/last-build.log last-build.log
+          git add last-build.log
+          git commit -m "build log ${{ github.run_number }}"
+          git push -f origin build-logs

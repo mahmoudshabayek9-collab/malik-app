@@ -19,6 +19,22 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      - name: Download Quran recitation (Al-Husary)
+        shell: bash
+        run: |
+          export D=app/src/main/assets/www/quran
+          mkdir -p "$D"
+          for SRC in Husary_64kbps Husary_128kbps; do
+            export SRC
+            xargs -P 8 -I{} sh -c 'f={}; [ -s "$D/$f" ] || curl -fsSL --retry 3 --retry-delay 2 -o "$D/$f" "https://everyayah.com/data/$SRC/$f" || rm -f "$D/$f"' < quran-files.txt || true
+            find "$D" -name '*.mp3' -size 0 -delete
+            n=$(ls "$D"/*.mp3 2>/dev/null | wc -l); echo "$SRC -> $n files"
+            [ "$n" -ge "$(wc -l < quran-files.txt)" ] && break
+          done
+          n=$(ls "$D"/*.mp3 2>/dev/null | wc -l)
+          if [ "$n" -ge "$(wc -l < quran-files.txt)" ]; then echo "window.__QURAN=true;" > "$D/ready.js"; else echo "// incomplete: $n" > "$D/ready.js"; fi
+          cat "$D/ready.js"; du -sh "$D"
+
       - name: Build signed APK
         shell: bash
         run: |

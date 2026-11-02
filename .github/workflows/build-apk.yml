@@ -12,9 +12,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
@@ -26,7 +26,22 @@ jobs:
           gradle-version: '8.9'
 
       - name: Build signed APK
-        run: gradle assembleRelease --no-daemon
+        shell: bash
+        run: |
+          set -o pipefail
+          gradle assembleRelease --no-daemon --stacktrace 2>&1 | tee build.log
+
+      - name: Save build log on failure
+        if: failure()
+        shell: bash
+        run: |
+          git config user.name "build-bot"; git config user.email "build-bot@users.noreply.github.com"
+          tail -n 300 build.log > last-build.log || echo "no log" > last-build.log
+          git checkout --orphan build-logs
+          git rm -rq --cached . || true
+          git add last-build.log
+          git commit -m "build log ${{ github.run_number }}"
+          git push -f origin build-logs
 
       - name: Rename
         run: cp app/build/outputs/apk/release/app-release.apk malik.apk
